@@ -10,7 +10,7 @@ July 2026 — companion design to the South Korea (1987) note, April 2026
 
 ## 1. Research question
 
-This project asks why some sectors broadened firm entry, patenting, and competitive diffusion after China's accession to the WTO (December 11, 2001), while others became more concentrated among pre-existing incumbents. I use WTO accession — and the associated tariff reductions, quota removals, and market-access commitments — as a common trade-liberalization shock, and ask whether post-accession sectoral outcomes depended on the organizational support structures that sectors had already accumulated under pre-accession industrial policy.
+This project asks why some sectors broadened firm entry, patenting, and competitive diffusion after China acceded to the WTO (December 11, 2001), while others became more concentrated among pre-existing incumbents. I use WTO accession — and the associated tariff reductions, quota removals, and market-access commitments — as a common trade-liberalization shock, and ask whether post-accession sectoral outcomes depended on the organizational support structures that sectors had already accumulated under pre-accession industrial policy.
 
 This is the same sequencing question as the companion Korea note, applied to a different kind of political-economic opening: not democratization, but external trade liberalization under a binding multilateral commitment. Liberalization does not act on a blank institutional slate. It interacts with pre-existing state capacity, financing relationships, and sector-coordination mechanisms built up in the pre-accession period. The empirical challenge, as before, is to measure those inherited structures directly rather than through expenditure proxies.
 
