@@ -17,6 +17,10 @@ This demo shows a minimal version of the workflow:
 
 The goal is not to automate substantive judgment away. The goal is to make measurement more scalable while keeping each score traceable to documentary evidence and human review.
 
+## Status
+
+This repository currently combines a synthetic demo (illustrating the full workflow end-to-end) with a first real pilot batch: 9 passages hand-coded from the official 2004 "Automotive Industry Development Policy" (汽车产业发展政策), State Council/NDRC Order No. 8. The pilot batch covers a single sector and a single source document; it is not yet a completed empirical analysis. See `data/README.md` for which files are synthetic and which are real, and `docs/prompt_log_automobiles_2026-07-19.md` for the coding run log.
+
 ## Repository structure
 
 ```text
@@ -66,3 +70,5 @@ python scripts/02_event_study_demo.py
 ## Limitations
 
 This repository uses synthetic data. Coefficients, plots, and output tables should not be interpreted substantively. The repository is intended to demonstrate reproducible project structure, transparent documentation, and a workflow for scaling measurement while preserving human oversight.
+
+The event-study coefficients and plots in outputs/ are still generated from synthetic data only; the real pilot batch in data/real_* has not yet been run through the quantitative pipeline.
