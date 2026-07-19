@@ -94,4 +94,4 @@ Substantively, this note extends the Korea design's underlying question — whet
 
 ## 9. Immediate next step
 
-Recode the automobile sector's pre-treatment State Support Index entries from the **1994** original policy text (not the 2004 revision already coded). Until this is done, `data/real_coded_passages_automobiles.csv` should be understood as *post-treatment descriptive material*, not as input to $S_s$.
+Recode the automobile sector's pre-treatment State Support Index entries from the **1994** original policy text. Until this is done, `data/real_coded_passages_automobiles.csv` should be understood as *post-treatment descriptive material*, not as input to $S_s$.
