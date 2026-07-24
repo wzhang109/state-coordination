@@ -17,4 +17,6 @@ These files are for workflow demonstration only and should not be interpreted su
 
 This is the first real (non-synthetic) data added to this repository, covering a single sector and a single source document. It is a pilot batch, not a completed empirical analysis.
 
-For a real project, raw archival materials should be stored separately if copyright or access restrictions apply. Public repositories should include metadata, codebooks, and replication-safe extracts rather than sensitive or non-public source text.
+For a real project, raw archival materials should be stored separately if copyright or access restrictions apply. Public repositories should include metadata, codebooks, and replication-safe extracts rather than sensitive or non-public source text. 
+
+More on the go
