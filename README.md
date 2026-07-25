@@ -19,7 +19,14 @@ The goal is not to automate substantive judgment away. The goal is to make measu
 
 ## Status
 
-This repository currently combines a synthetic demo (illustrating the full workflow end-to-end) with a first real pilot batch: 9 passages hand-coded from the official 2004 "Automotive Industry Development Policy" (汽车产业发展政策), State Council/NDRC Order No. 8. The pilot batch covers a single sector and a single source document; it is not yet a completed empirical analysis. See `data/README.md` for which files are synthetic and which are real, and `docs/prompt_log_automobiles_2026-07-19.md` for the coding run log.
+This repository combines a synthetic demo (illustrating the full workflow end-to-end) with real pilot data for one sector (automobiles), now covering both sides of the treatment boundary defined in `researchstrategy_ChinaWTO.md`:
+
+- **Pre-treatment batch (treatment evidence):** 14 rubric-coded records from 12 passages of the 1994 Automotive Industry Policy (汽车工业产业政策, State Council, July 1994) — see `data/real_coded_passages_automobiles_1994.csv`. Includes three provisions (Articles 29, 32, 36) that reappear near-verbatim in the 2004 policy, providing direct documentary evidence for the persistence dimension.
+- **Post-treatment batch (policy-response evidence, not treatment input):** 9 records from the 2004 Automotive Industry Development Policy — see `data/real_coded_passages_automobiles.csv`. Per the WTO research design, this document postdates accession and is used as outcome-side descriptive material only.
+
+Research designs: `researchstrategy_ChinaWTO.md` (active empirical target: WTO accession as staggered liberalization shock) and the South Korea 1987 methodological note (PDF, companion design).
+
+Not yet done: no outcome data collected; the real batches have not been run through the quantitative pipeline; only one sector coded so far.
 
 ## Repository structure
 
