@@ -17,7 +17,7 @@ This demo shows a minimal version of the workflow:
 
 The goal is not to automate substantive judgment away. The goal is to make measurement more scalable while keeping each score traceable to documentary evidence and human review.
 
-## Status
+## Status 
 
 This repository combines a synthetic demo (illustrating the full workflow end-to-end) with real pilot data for one sector (automobiles), now covering both sides of the treatment boundary defined in `researchstrategy_ChinaWTO.md`:
 
