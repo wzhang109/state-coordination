@@ -1,0 +1,4 @@
+source_id,sector,year,dimension,score,passage_excerpt,coder_id,confidence,review_status,notes
+SRC_AUTO_1996_001,Automobiles,1996,allocation,2,"国家支持2~3家汽车集团向40万辆及以上的生产能力发展。促进8~10家摩托车重点企业,达到具有国际竞争力的规模。",wenwen_zhang,high,accepted,"Source: 九五纲要 Section 四(三)4 汽车工业, official NDRC PDF https://www.ndrc.gov.cn/fggz/fzzlgh/gjfzgh/200709/P020191029595686994247.pdf; explicit small-number firm targeting"
+SRC_AUTO_1996_001,Automobiles,1996,persistence,2,"国家支持2~3家汽车集团向40万辆及以上的生产能力发展",wenwen_zhang,high,accepted,"'2-3家' formulation identical to 1994 policy Article 2 ('支持2-3家汽车生产企业(企业集团)迅速成长'); cross-document continuity 1994->1996"
+SRC_AUTO_1996_002,Automobiles,1996,persistence,2,"2000年,汽车产量满足国内市场需求的90%以上。",wenwen_zhang,high,accepted,"90% domestic-market target identical to 1994 policy Article 1; cross-document continuity 1994->1996"
