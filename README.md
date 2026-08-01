@@ -2,7 +2,24 @@
 
 A small public demo for source-traceable policy-text measurement and event-study workflow. This repository uses **synthetic data only**. It is designed to demonstrate workflow habits rather than present final empirical results.
 
+## What this demonstrates
+
+An end-to-end workflow for turning unstructured documentary evidence into auditable quantitative measures: a rubric fixed before coding, source-traceable passage-level scores, benchmark validation of machine-assisted coding against hand-coded labels, explicit index construction with stated weighting and standardization choices, and a
+panel event-study specification.
+
+The substantive results here are generated from synthetic data and should not be interpreted. The workflow, the documentation standard, and the auditability are the point. The same architecture is being applied in a current project on accountability
+allocation in human-agent workflows: github.com/wzhang109/Accountability_Continuity_Research
+
 ## Why this repo exists
+
+The measurement workflow is method-general and applies to two settings. The event-study
+specification demonstrated here is built on South Korea's 1987 democratic transition;
+that application is currently paused pending resolution of data availability for the
+sector-year outcome series. Active coding work has moved to China's post-WTO industrial
+policy, which is the source of the real pilot batch in data/real_*. The synthetic demo
+therefore uses the Korea event structure, while the hand-coded pilot passages are Chinese
+policy text — the specification and the pilot data are deliberately from different
+settings at this stage.
 
 My research asks whether inherited state coordination structures shape post-transition outcomes such as firm entry, patenting, and concentration. The main empirical challenge is measurement: how to turn policy texts, laws, industrial plans, R&D mandates, and archival passages into auditable sector-level metrics.
 
@@ -79,3 +96,17 @@ python scripts/02_event_study_demo.py
 This repository uses synthetic data. Coefficients, plots, and output tables should not be interpreted substantively. The repository is intended to demonstrate reproducible project structure, transparent documentation, and a workflow for scaling measurement while preserving human oversight.
 
 The event-study coefficients and plots in outputs/ are still generated from synthetic data only; the real pilot batch in data/real_* has not yet been run through the quantitative pipeline.
+
+Two further caveats about the specification, noted here rather than discovered later:
+
+1. Standard errors are clustered by sector. Cluster-robust inference is asymptotic in
+   the number of clusters, so with a small number of sectors these standard errors are
+   downward-biased and the implied confidence intervals are too narrow. A wild cluster
+   bootstrap (Cameron, Gelbach & Miller 2008) would be the appropriate correction in a
+   real application.
+
+2. The design interacts event-time indicators with a continuous exposure measure under a
+   common event date. This is a differential-exposure event study, not a staggered-adoption
+   design, and it requires a stronger identifying assumption than binary DiD — parallel
+   trends must hold across exposure levels, not only between treated and untreated
+   (Callaway, Goodman-Bacon & Sant'Anna 2024).
