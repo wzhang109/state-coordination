@@ -34,6 +34,24 @@ This demo shows a minimal version of the workflow:
 
 The goal is not to automate substantive judgment away. The goal is to make measurement more scalable while keeping each score traceable to documentary evidence and human review.
 
+## Empirical settings
+
+This measurement approach is being developed for two independent settings.
+
+**Setting 1 — South Korea, 1987 democratization.** Currently paused: the sector-year
+outcome data required for the panel is classified and not accessible. The synthetic
+demo in this repository is built around this setting, which is why event time is
+indexed to 1987. May resume if data access changes.
+
+**Setting 2 — China, 2001 WTO accession.** The active setting. The real pilot batch
+codes policy text from this setting.
+
+The synthetic demo and the real pilot batch therefore belong to different settings.
+This is intentional, not an inconsistency: the demo illustrates the full pipeline
+end-to-end, while the pilot batch tests the coding rubric against authentic policy
+text.
+
+
 ## Status 
 
 This repository combines a synthetic demo (illustrating the full workflow end-to-end) with real pilot data for one sector (automobiles), now covering both sides of the treatment boundary defined in `researchstrategy_ChinaWTO.md`:
