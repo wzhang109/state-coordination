@@ -107,6 +107,23 @@ python scripts/02_event_study_demo.py
 - `docs/validation_plan.md` outlines benchmark construction, error analysis, and human review routing.
 - `scripts/01_construct_index.py` makes the weighting and standardization choices explicit.
 
+## Related work
+
+This repository is the methodological ancestor of a parallel project applying the same
+measurement approach to a different domain:
+
+**[Accountability Continuity Research](https://github.com/wzhang109/Accountability_Continuity_Research)**
+— an institutional framework for human-agentic task allocation. It asks which decisions
+require a continuous, accountable human as AI systems become more capable, and builds an
+Accountability Continuity Index using the same design pattern used here: dimensions fixed
+before outcomes are examined, every score traceable to primary evidence, ambiguous cases
+routed to human review, and staggered-adoption panel methods for testing.
+
+The rubric structure is deliberately shared across both projects (dimension scores,
+`coder_id`, `confidence`, `review_status`) so that measurement decisions remain auditable
+in the same way regardless of subject matter.
+
+
 ## Limitations
 
 This repository uses synthetic data. Coefficients, plots, and output tables should not be interpreted substantively. The repository is intended to demonstrate reproducible project structure, transparent documentation, and a workflow for scaling measurement while preserving human oversight.
