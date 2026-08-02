@@ -24,6 +24,25 @@ At minimum, report:
 - disagreement rate by document type
 - examples of false positives and false negatives
 
+## Weighting and sensitivity
+
+The four dimensions are currently equal-weighted (0.25 each). This is a default choice
+under no prior information about relative importance, not a substantive claim.
+
+Planned sensitivity checks, to be run once sector coverage is sufficient (n >= 8):
+
+1. **Leave-one-dimension-out.** Recompute the index four times, each time dropping one
+   dimension. Report how sector rankings change.
+2. **Perturbation.** Draw 1,000 weight vectors from a Dirichlet(1,1,1,1) distribution.
+   Report the share of draws under which the main qualitative conclusion is unchanged.
+3. **Theory-motivated alternatives.** Report the index under at least one weighting
+   derived from the mechanism rather than convenience — e.g. up-weighting network
+   breadth and allocation, which are the two dimensions that distinguish the
+   capacity-building hypothesis from the incumbent-entrenchment hypothesis.
+
+A result that survives (1) and holds in >90% of (2) is reported as robust. A result
+that does not is reported as weight-dependent, not suppressed.
+
 ## 3. Error typology
 
 Classify recurring errors, such as:
