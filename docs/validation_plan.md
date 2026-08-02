@@ -73,3 +73,18 @@ A validation memo should summarize:
 - major error patterns;
 - examples of corrected cases;
 - implications for index construction.
+
+## Reliability
+
+Current status: single coder (wenwen_zhang), AI-assisted first pass with human review.
+
+Reliability evidence, in order of strength:
+1. **AI-draft vs human-final disagreement rate** — available from prompt logs; reported
+   as a check on whether machine assistance is being rubber-stamped.
+2. **Test-retest (intra-coder)** — blind recode of a random subsample after a minimum
+   7-day gap. Reported as exact agreement, within-1 agreement, and quadratic-weighted
+   Cohen's kappa.
+3. **Independent second coder** — planned. Not yet available.
+
+Dimension-level disagreement is treated diagnostically: any dimension falling below
+kappa 0.60 triggers a rubric revision, logged with date and reason.
