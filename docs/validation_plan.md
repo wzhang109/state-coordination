@@ -74,6 +74,12 @@ A validation memo should summarize:
 - examples of corrected cases;
 - implications for index construction.
 
+If pre-trends are present, the planned responses in order are:
+(1) report results as descriptive associations, not causal effects;
+(2) narrow the event window to the periods where pre-trends are flat;
+(3) add sector-specific linear trends and report both specifications side by side.
+None of these are treated as a way to recover a causal claim — they are ways to report honestly what the data does and does not support.
+
 ## Reliability
 
 Current status: single coder (wenwen_zhang), AI-assisted first pass with human review.
