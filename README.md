@@ -12,15 +12,6 @@ allocation in human-agent workflows: github.com/wzhang109/Accountability_Continu
 
 ## Why this repo exists
 
-The measurement workflow is method-general and applies to two settings. The event-study
-specification demonstrated here is built on South Korea's 1987 democratic transition;
-that application is currently paused pending resolution of data availability for the
-sector-year outcome series. Active coding work has moved to China's post-WTO industrial
-policy, which is the source of the real pilot batch in data/real_*. The synthetic demo
-therefore uses the Korea event structure, while the hand-coded pilot passages are Chinese
-policy text — the specification and the pilot data are deliberately from different
-settings at this stage.
-
 My research asks whether inherited state coordination structures shape post-transition outcomes such as firm entry, patenting, and concentration. The main empirical challenge is measurement: how to turn policy texts, laws, industrial plans, R&D mandates, and archival passages into auditable sector-level metrics.
 
 This demo shows a minimal version of the workflow:
@@ -33,6 +24,13 @@ This demo shows a minimal version of the workflow:
 6. estimate a simple event-study specification on synthetic data.
 
 The goal is not to automate substantive judgment away. The goal is to make measurement more scalable while keeping each score traceable to documentary evidence and human review.
+
+![Event-study demo output](outputs/event_study_plot.png)
+
+*Synthetic data only.* The plot shows interactions between event-time indicators and the pre-transition State Support Index, with sector and year fixed effects and k = -1 omitted as the reference period. Coefficients are not substantive results — the figure illustrates the output format of the workflow. Pre-period coefficients (left of the dashed line) are where the parallel-trends assumption is tested.
+
+The measurement workflow is method-general and applies to two settings. The event-study specification demonstrated here is built on South Korea's 1987 democratic transition; that application is currently paused pending resolution of data availability for the sector-year outcome series. Active coding work has moved to China's post-WTO industrial policy, which is the source of the real pilot batch in data/real_*. The synthetic demo
+therefore uses the Korea event structure, while the hand-coded pilot passages are Chinese policy text — the specification and the pilot data are deliberately from different settings at this stage.
 
 ## Empirical settings
 
