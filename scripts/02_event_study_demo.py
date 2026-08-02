@@ -65,6 +65,18 @@ plt.title("Synthetic event-study demo")
 plt.tight_layout()
 plt.savefig(OUT / "event_study_plot.png", dpi=200)
 
+# Joint test: are all pre-period interactions zero?
+pre_terms = [c for c in interaction_terms
+             if c.startswith("event_m") and c != "event_m1_x_support"]
+if pre_terms:
+    hypothesis = ", ".join(f"{t} = 0" for t in pre_terms)
+    pre_test = model.f_test(hypothesis)
+    print("\n=== Pre-trend joint test (H0: all pre-period coefficients = 0) ===")
+    print(f"F = {float(pre_test.fvalue):.3f}, p = {float(pre_test.pvalue):.4f}")
+    print("Fail to reject -> parallel trends supported."
+          if float(pre_test.pvalue) > 0.10 else
+          "Reject -> pre-trends present; do not interpret post-period causally.")
+
 print(model.summary().tables[1])
 print(f"Wrote {OUT / 'event_study_coefficients.csv'}")
 print(f"Wrote {OUT / 'event_study_plot.png'}")
