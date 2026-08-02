@@ -20,3 +20,5 @@ This is the first real (non-synthetic) data added to this repository, covering t
 For a real project, raw archival materials should be stored separately if copyright or access restrictions apply. Public repositories should include metadata, codebooks, and replication-safe extracts rather than sensitive or non-public source text. 
 
 More on the go
+
+*** The 2004 batch is not used to construct the pre-transition index. It documents institutional continuity across the transition: three provisions coded in the 1994 policy (JV count ceiling, 50% equity floor, designated import ports) reappear in the 2004 policy in near-identical or verbatim form, despite WTO accession in 2001. Whether that continuity is protective or entrenching is the empirical question the index is built to address.
