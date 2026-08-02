@@ -21,6 +21,23 @@ dim_scores = (
     .rename(columns={"score": "mean_score"})
 )
 
+N_SECTORS = dim_scores["sector"].nunique()
+STANDARDIZE_MIN_SECTORS = 8   
+
+if N_SECTORS >= STANDARDIZE_MIN_SECTORS:
+    dim_scores["index_input"] = dim_scores.groupby("dimension")["mean_score"].transform(
+        lambda x: (x - x.mean()) / x.std(ddof=0)
+    )
+    scale_note = "z-standardized within dimension"
+else:
+
+    dim_scores["index_input"] = dim_scores["mean_score"]
+    scale_note = (
+        f"raw 0-2 dimension means (standardization skipped: only {N_SECTORS} sectors; "
+        f"with n<{STANDARDIZE_MIN_SECTORS} z-scores collapse to sign and discard magnitude)"
+    )
+print(f"[index scale] {scale_note}")
+
 # Standardize each dimension across sectors.
 dim_scores["std_score"] = dim_scores.groupby("dimension")["mean_score"].transform(
     lambda x: (x - x.mean()) / x.std(ddof=0)
