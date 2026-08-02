@@ -20,8 +20,5 @@ and the results are reported as descriptive rather than causal.
 
 ### Current scale and what it supports
 
-Real coded data currently covers 2 sectors. The event-study specification in
-`scripts/02_` requires many more clusters for valid inference and is retained as a
-demonstration of the intended workflow, not as an estimation of the current sample.
-At present the repository supports descriptive measurement and documentation of
-institutional continuity, not causal estimation.
+Real coded data currently covers 2 sectors. The event-study specification in `scripts/02_` requires many more clusters for valid inference and is retained as a demonstration of the intended workflow, not as an estimation of the current sample.
+At present the repository supports descriptive measurement and documentation of institutional continuity, not causal estimation.
