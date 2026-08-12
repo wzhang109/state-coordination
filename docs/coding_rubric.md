@@ -1,82 +1,78 @@
-"""Run a simple event-study demo on synthetic data.
+# Coding Rubric: State Support Index
 
-This script estimates interactions between event-time indicators and the
-pre-transition State Support Index, with sector and year fixed effects. It uses
-synthetic data for workflow demonstration only.
-"""
-from pathlib import Path
-import re
-import numpy as np
-import pandas as pd
-import statsmodels.formula.api as smf
-import matplotlib.pyplot as plt
+The State Support Index is intended to measure **pre-transition organizational support**, not state capacity itself. Each score must be traceable to a source passage.
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-OUT = ROOT / "outputs"
-OUT.mkdir(exist_ok=True)
+## Unit of coding
 
-panel = pd.read_csv(DATA / "demo_sector_year.csv")
-index = pd.read_csv(DATA / "demo_support_index.csv")
-df = panel.merge(index[["sector", "state_support_index"]], on="sector", how="left")
+- Sector-year-dimension cell
+- Supporting evidence: archival passage, law, industrial plan, policy directive, R&D mandate, or sectoral development document
 
-# Restrict event window and omit k = -1 as reference period.
-event_window = list(range(-6, 9))
-reference = -1
-for k in event_window:
-    if k == reference:
-        continue
-    name = f"event_{'m' + str(abs(k)) if k < 0 else 'p' + str(k)}"
-    df[name] = (df["event_time"] == k).astype(int)
-    df[f"{name}_x_support"] = df[name] * df["state_support_index"]
+## Dimensions
 
-interaction_terms = [c for c in df.columns if c.endswith("_x_support")]
-formula = "entry_rate ~ " + " + ".join(interaction_terms) + " + C(sector) + C(year)"
-model = smf.ols(formula, data=df).fit(cov_type="cluster", cov_kwds={"groups": df["sector"]})
+### 1. Persistence
 
-# Joint test: are all pre-period interactions zero? This is the actual test of
-# the parallel-trends identifying assumption (validation_plan.md, Section 8) --
-# individual pre-period coefficients can look reassuring one at a time while
-# still jointly rejecting the null, so both are reported.
-pre_terms = [c for c in interaction_terms
-             if c.startswith("event_m") and c != "event_m1_x_support"]
-if pre_terms:
-    hypothesis = ", ".join(f"{t} = 0" for t in pre_terms)
-    pre_test = model.f_test(hypothesis)
-    print("\n=== Pre-trend joint test (H0: all pre-period coefficients = 0) ===")
-    print(f"F = {float(pre_test.fvalue):.3f}, p = {float(pre_test.pvalue):.4f}")
+How durable and repeated was state support for a sector before the transition?
 
-rows = []
-for term in interaction_terms:
-    match = re.search(r"event_(m\d+|p\d+)_x_support", term)
-    label = match.group(1)
-    k = -int(label[1:]) if label.startswith("m") else int(label[1:])
-    rows.append({
-        "event_time": k,
-        "estimate": model.params.get(term, np.nan),
-        "std_error": model.bse.get(term, np.nan),
-    })
-coef = pd.DataFrame(rows).sort_values("event_time")
-coef["ci_low"] = coef["estimate"] - 1.96 * coef["std_error"]
-coef["ci_high"] = coef["estimate"] + 1.96 * coef["std_error"]
-coef.to_csv(OUT / "event_study_coefficients.csv", index=False)
+- `0`: no clear recurring support
+- `1`: occasional or short-lived support
+- `2`: repeated or institutionalized support across multiple years or documents
 
-plt.figure(figsize=(7, 4.5))
-plt.axhline(0, linewidth=1)
-plt.axvline(0, linestyle="--", linewidth=1)
-plt.errorbar(
-    coef["event_time"],
-    coef["estimate"],
-    yerr=1.96 * coef["std_error"],
-    fmt="o-",
-    capsize=3,
-)
-plt.xlabel("Event time relative to 1987")
-plt.ylabel("Interaction with State Support Index")
-plt.title("Synthetic event-study demo")
-plt.tight_layout()
-plt.savefig(OUT / "event_study_plot.png", dpi=200)
+### 2. Specificity
 
-print(model.summary().tables[1])
-print(f"Wrote {OUT / 'event_study_coefficients.csv'}")
-print(f"Wrote {OUT / 'event_study_plot.png'}")
+How targeted was the policy support?
+
+- `0`: broad macro or economy-wide language only
+- `1`: sector-relevant but not highly specific
+- `2`: sector-specific policy, target, mandate, or implementation instrument
+
+### 3. Network breadth
+
+How many types of organizations were connected by the policy framework?
+
+- `0`: no clear organizational network
+- `1`: one or two organization types, such as ministry-firm or ministry-bank
+- `2`: broader network involving ministries, firms, banks, research institutes, technology agencies, or industry associations
+
+### 4. Allocation
+
+Did support appear broadly capacity-building or incumbent-directed?
+
+- `0`: no allocation mechanism identified
+- `1`: broad support or general sectoral capacity-building
+- `2`: targeted allocation to selected firms, incumbents, or privileged organizations
+
+## Direction (allocation only)
+
+Added 2026-08-12, after the first real coded batches revealed that the allocation
+dimension was collapsing two opposite mechanisms into one score.
+
+State control over entry can be **protective** (restricting entry to preserve
+selected incumbents, as in the 1994 automotive policy's suspension of new
+passenger-vehicle approvals) or **compressive** (restricting capacity to force
+contraction, as in the 1998 textile spindle-reduction program). Both score 2 on
+allocation under the original rubric, but they predict opposite outcomes.
+
+`direction` is recorded separately rather than folded into the score, so the index
+can be computed with or without the distinction and the two can be compared.
+
+Values: `protective` | `compressive` | `neutral` (blank for non-allocation rows)
+
+## Required evidence fields
+
+Each coded passage should include:
+
+- `source_id`
+- `sector`
+- `year`
+- `dimension`
+- `score`
+- `passage_excerpt`
+- `coder_id`
+- `confidence`
+- `review_status`
+- `notes`
+- `direction` (allocation rows only; see above)
+
+## Ambiguous cases
+
+Ambiguous or low-confidence cases should be routed to human review. Scores should not be finalized only from machine-generated outputs.
