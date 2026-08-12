@@ -43,3 +43,44 @@ and final content are human-reviewed before acceptance.
   Ninth Five-Year Plan textile section.
 - Begin outcome-data reconnaissance: China Industrial Enterprise Database
   access options, CNIPA patent counts by sector.
+
+  ---
+
+## Week of August 12, 2026
+
+**Focus:** Index construction fix + allocation direction field
+
+**Done:**
+- Found a degenerate case in `scripts/01_construct_index.py`'s cross-sector
+z-standardization: with n=2 sectors, the population SD is |a-b|/2, so the
+z-score reduces to sign(a-b) regardless of the size of the underlying gap.
+Verified numerically across several (a,b) pairs — e.g. 2.0 vs 1.9 and 2.0 vs
+0.1 produced identical standardized scores. The index was behaving as a vote
+over which sector scored higher on each dimension, discarding all magnitude
+information. Gated standardization on a minimum sector count (8); below that,
+the script now falls back to raw 0-2 dimension means and prints which scale
+it used. Documented in `README.md`'s "What is auditable" section.
+- Added a `direction` field (protective / compressive / neutral) to the
+allocation dimension across all four real coded-passage batches (1994, 1996,
+2004 autos; 1998/1996 textiles). The original rubric scored both the 1994
+auto entry-freeze (protective — restricts entry to preserve incumbents) and
+the 1998 textile spindle-freeze (compressive — restricts capacity to force
+contraction) as allocation=2, even though they predict opposite outcomes.
+Recorded direction as a separate field rather than folding it into the score,
+so the index can be computed with or without the distinction.
+
+**Found/decided:**
+- If autos (protective) and textiles (compressive) move in opposite
+directions post-transition, an event-study coefficient that pools them would
+be diluted toward zero — not because there's no effect, but because the
+index summed two opposite mechanisms into one number. This was invisible
+until the two sectors' rubric notes were placed side by side.
+- Rubric revision is logged with date and reason in `docs/coding_rubric.md`,
+per the reliability-tracking convention in `docs/validation_plan.md`: a
+rubric that changes on contact with real data and says so is more credible
+than one that claims to have been right from the start.
+
+**Next:**
+[fill in once you decide — candidates: finish validation_plan sections 6-8,
+build the 1996 source log, or start the recall-worksheet answers while the
+allocation rows are fresh]
