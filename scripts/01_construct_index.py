@@ -21,27 +21,30 @@ dim_scores = (
     .rename(columns={"score": "mean_score"})
 )
 
+# Standardize each dimension across sectors -- but only when there are enough
+# sectors for standardization to mean anything. With n=2, the population SD
+# is |a-b|/2, so z reduces to sign(a-b): the index degenerates into a vote
+# over which sector scored higher, discarding all magnitude information,
+# regardless of how close or far apart the two scores actually are.
 N_SECTORS = dim_scores["sector"].nunique()
-STANDARDIZE_MIN_SECTORS = 8   
+STANDARDIZE_MIN_SECTORS = 8
 
 if N_SECTORS >= STANDARDIZE_MIN_SECTORS:
-    dim_scores["index_input"] = dim_scores.groupby("dimension")["mean_score"].transform(
+    dim_scores["std_score"] = dim_scores.groupby("dimension")["mean_score"].transform(
         lambda x: (x - x.mean()) / x.std(ddof=0)
     )
     scale_note = "z-standardized within dimension"
 else:
-
-    dim_scores["index_input"] = dim_scores["mean_score"]
+    # Raw scores already share a common 0-2 scale, so no rescaling is needed.
+    # With few sectors, z-scores collapse toward +/-1 and discard magnitude.
+    dim_scores["std_score"] = dim_scores["mean_score"]
     scale_note = (
-        f"raw 0-2 dimension means (standardization skipped: only {N_SECTORS} sectors; "
-        f"with n<{STANDARDIZE_MIN_SECTORS} z-scores collapse to sign and discard magnitude)"
+        f"raw 0-2 dimension means (standardization skipped: {N_SECTORS} sectors < "
+        f"{STANDARDIZE_MIN_SECTORS})"
     )
+
 print(f"[index scale] {scale_note}")
 
-# Standardize each dimension across sectors.
-dim_scores["std_score"] = dim_scores.groupby("dimension")["mean_score"].transform(
-    lambda x: (x - x.mean()) / x.std(ddof=0)
-)
 dim_scores["weight"] = dim_scores["dimension"].map(DIMENSION_WEIGHTS)
 dim_scores["weighted_score"] = dim_scores["std_score"] * dim_scores["weight"]
 
