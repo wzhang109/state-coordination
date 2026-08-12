@@ -34,6 +34,18 @@ interaction_terms = [c for c in df.columns if c.endswith("_x_support")]
 formula = "entry_rate ~ " + " + ".join(interaction_terms) + " + C(sector) + C(year)"
 model = smf.ols(formula, data=df).fit(cov_type="cluster", cov_kwds={"groups": df["sector"]})
 
+# Joint test: are all pre-period interactions zero? This is the actual test of
+# the parallel-trends identifying assumption (validation_plan.md, Section 8) --
+# individual pre-period coefficients can look reassuring one at a time while
+# still jointly rejecting the null, so both are reported.
+pre_terms = [c for c in interaction_terms
+             if c.startswith("event_m") and c != "event_m1_x_support"]
+if pre_terms:
+    hypothesis = ", ".join(f"{t} = 0" for t in pre_terms)
+    pre_test = model.f_test(hypothesis)
+    print("\n=== Pre-trend joint test (H0: all pre-period coefficients = 0) ===")
+    print(f"F = {float(pre_test.fvalue):.3f}, p = {float(pre_test.pvalue):.4f}")
+
 rows = []
 for term in interaction_terms:
     match = re.search(r"event_(m\d+|p\d+)_x_support", term)
@@ -64,18 +76,6 @@ plt.ylabel("Interaction with State Support Index")
 plt.title("Synthetic event-study demo")
 plt.tight_layout()
 plt.savefig(OUT / "event_study_plot.png", dpi=200)
-
-# Joint test: are all pre-period interactions zero?
-pre_terms = [c for c in interaction_terms
-             if c.startswith("event_m") and c != "event_m1_x_support"]
-if pre_terms:
-    hypothesis = ", ".join(f"{t} = 0" for t in pre_terms)
-    pre_test = model.f_test(hypothesis)
-    print("\n=== Pre-trend joint test (H0: all pre-period coefficients = 0) ===")
-    print(f"F = {float(pre_test.fvalue):.3f}, p = {float(pre_test.pvalue):.4f}")
-    print("Fail to reject -> parallel trends supported."
-          if float(pre_test.pvalue) > 0.10 else
-          "Reject -> pre-trends present; do not interpret post-period causally.")
 
 print(model.summary().tables[1])
 print(f"Wrote {OUT / 'event_study_coefficients.csv'}")
