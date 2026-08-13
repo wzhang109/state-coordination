@@ -84,3 +84,38 @@ than one that claims to have been right from the start.
 [fill in once you decide — candidates: finish validation_plan sections 6-8,
 build the 1996 source log, or start the recall-worksheet answers while the
 allocation rows are fresh]
+
+---
+
+## Week of August 13, 2026
+
+**Focus:** Outcome-data reconnaissance (firm entry, patenting)
+
+**Done:**
+- Surveyed access routes for the two outcome variables the panel still needs. Full
+findings in `docs/outcome_data_reconnaissance.md`.
+- Firm entry: the standard source (China Industrial Enterprise Database) is realistically
+gated behind a university library subscription I don't have; market-resold copies carry a
+documented authenticity risk (Nie, Jiang & Yang 2012 and others flag this directly).
+Identified a public proxy instead — business-registration data via the National Enterprise
+Credit Information Publicity System, accessible in bulk through third-party aggregators
+(启信宝 and similar) without institutional affiliation.
+- Patenting: CNIPA's own published statistics are too aggregated to map onto this
+project's sector definitions. Google Patents Public Data on BigQuery is free, covers
+China, and is queryable by IPC classification — the standard approach in the literature
+for constructing sector-level patent counts via an IPC-to-industry crosswalk.
+
+**Found/decided:**
+- The "gold standard" firm-entry dataset is not currently reachable without either a
+university affiliation or a collaborator who has one. Rather than block on that, the
+registration-date proxy is the working near-term plan — logged explicitly as a proxy, not
+equivalent to above-scale industrial firm entry, so it doesn't get quietly treated as the
+same variable later.
+- Patents have a clear, free, realistic path (BigQuery); firm entry does not yet, and costs
+money either way (aggregator query fees).
+
+**Next:**
+- Draft the IPC-to-industry crosswalk for automobiles and textiles; run a test BigQuery
+query and sanity-check against CNIPA's published aggregates.
+- Price out one registration-data aggregator and check whether its industry classification
+maps cleanly onto the two coded sectors.
