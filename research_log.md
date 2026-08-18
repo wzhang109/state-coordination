@@ -119,3 +119,43 @@ money either way (aggregator query fees).
 query and sanity-check against CNIPA's published aggregates.
 - Price out one registration-data aggregator and check whether its industry classification
 maps cleanly onto the two coded sectors.
+
+---
+
+## Week of August 14, 2026
+
+**Focus:** IPC-to-industry crosswalk and BigQuery test query (patents outcome variable)
+
+**Done:**
+- Built the automobiles/textiles IPC crosswalk from a published source rather than from
+scratch: [Schmoch (2008)](https://www.wipo.int/documents/2948119/3215563/wipo_ipc_technology.pdf),
+the WIPO IPC-Technology Concordance Table (35 fields). Full crosswalk and reasoning in
+`docs/ipc_industry_crosswalk.md`.
+- Automobiles maps to WIPO Field 32 ("Transport": B60#, B61#, B62#, B63#, B64#), which is
+broader than autos alone (includes rail/marine/air). Narrowed to B60# + B62D for a tighter
+fit to this project's sector definition; logged as a deliberate departure from the
+published concordance, with the broader field kept as a robustness check.
+- Textiles maps to WIPO Field 28 ("Textile and paper machines"), which bundles in paper
+machinery (B31#, D21#) and printing (B41#) — excluded those. Also found that Schmoch's
+table splits textile *treatment* processes (dyeing/bleaching, D06B/C/L) into a different
+field ("Chemical engineering") from textile *machinery* — noted as a known gap, not
+silently missing data.
+- Drafted a test SQL query against `patents-public-data.patents.publications` (Google
+Patents Public Data, BigQuery) — `docs/bigquery_patent_test_query.sql`. Two variants:
+assignee country = China (closer to "Chinese firm patented this") vs. filing office =
+China (simpler, but conflates foreign filings in China with Chinese filings abroad).
+Both variants should be run and compared, not just one picked.
+
+**Found/decided:**
+- Used a citable, externally maintained crosswalk (WIPO/Schmoch) instead of building one
+from scratch, consistent with the project's standing practice of fixing definitions before
+looking at outcomes rather than adjusting them after.
+- Could not find published API pricing for 启信宝 (Qixin) online — their open-platform page
+didn't return pricing information. Still an open task, not resolved this session.
+
+**Next:**
+- Run both query variants in BigQuery (requires your own Google Cloud account — see
+instructions from this session) and sanity-check counts against CNIPA's published
+aggregates.
+- Contact 启信宝 (or try 企查查/天眼查 instead) directly for API pricing, since it isn't
+published.
