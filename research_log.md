@@ -159,3 +159,40 @@ instructions from this session) and sanity-check counts against CNIPA's publishe
 aggregates.
 - Contact 启信宝 (or try 企查查/天眼查 instead) directly for API pricing, since it isn't
 published.
+
+---
+
+## Week of August 15, 2026
+
+**Focus:** First real outcome-variable pull — patent counts, automobiles vs. textiles
+
+**Done:**
+- Ran both BigQuery variants (assignee country vs. filing office) from
+`docs/bigquery_patent_test_query.sql`, 1990–2010. Full comparison and findings in
+`docs/outcome_data_reconnaissance.md`, "Results" section. Raw exports saved to
+`data/outcome_patents_automobiles_textiles.csv` (working series) and
+`data/outcome_patents_automobiles_textiles_assignee_variant.csv` (comparison only).
+
+**Found/decided:**
+- Variant A (assignee-based) has a tail-year artifact — sharp, implausible drop in 2009–2010
+caused by lag in Google's assignee name-disambiguation processing, not a real decline.
+Adopted Variant B (filing-office-based) as the working series instead.
+- Both sectors grew roughly 20–30x over 1990–2010, tracking China's broader nationwide
+patent-filing boom rather than sector-specific signal on its own — the event study's year
+fixed effects are what's supposed to absorb this, not something to read into the raw counts.
+- Real concern, not resolved: the auto/textile filing ratio was already rising sharply
+*before* 2001 (automobiles +38.7% YoY in 2000 alone), which is exactly the kind of pre-trend
+the joint test in `scripts/02_event_study_demo.py` exists to catch. Flagged rather than
+explained away — the joint test needs to run for real once this series is on the actual
+panel, not assumed to pass.
+- Textiles' growth accelerated *more* in relative terms post-2001 than automobiles' did
+(CAGR: textiles 12.75%→17.1%, autos 16.6%→19.8%). Noted as not obviously fitting a simple
+"protective sectors benefit more" story — held loosely, not fitted to a narrative from two
+ratios.
+
+**Next:**
+- Merge the patent series into a proper sector-year panel matching `demo_sector_year.csv`'s
+structure.
+- Decide how to handle Variant B's domestic-vs-foreign-filer scope question.
+- Run the actual pre-trend joint test once the State Support Index is on the same panel —
+this is the real test of whether the design holds up, not the eyeballed ratios above.
