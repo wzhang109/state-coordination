@@ -19,7 +19,7 @@ Retrieved or checked 20 September 2026. Estimates and interpretation in the acco
 
 ## Original sources listed by Maddison
 
-The following bibliography is transcribed from the release workbook's Sources and Maddison original sources sheets. It retains the source references associated with the historical series; listing them is attribution, not a claim that each underlying work has been independently read. Full country/period mappings remain in the included workbook and CSV exports. The release also specifies the Conference Board Total Economy Database for 2008–2022 where available, and otherwise UN national accounts statistics.
+The following bibliography is transcribed from the release workbook's Sources and Maddison original sources sheets. It retains the source references associated with the historical series; listing them is attribution, not a claim that each underlying work has been independently read. Full country/period mappings remain in the original publisher's release workbook. The public package does not include that entire workbook or all its source sheets; the download script retrieves the original release for reproduction. The release also specifies the Conference Board Total Economy Database for 2008–2022 where available, and otherwise UN national accounts statistics.
 
 - Prados de la Escosura, L. (2009). “Lost Decades? Economic Performance in Post-Independence Latin America,” Journal of Latin America Studies 41: 279–307 (updated data)
 - Bertola, L and Ocampo, J.A. (2012) The Economic Development of Latin America since Independence. Oxford, Oxford U.P

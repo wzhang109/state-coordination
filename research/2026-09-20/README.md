@@ -4,7 +4,9 @@ Exploratory findings · 20 September 2026 · Wenwen (Celine) Zhang
 
 [中文说明](findings.zh-CN.md) · [Sources](sources.md) · [Analysis plan and amendments](ANALYSIS_PLAN.md)
 
-**Higher state capacity before a qualifying democratic transition is positively associated with subsequent twenty-year growth in the samples examined here. Ten-year estimates are less precise. These results do not establish that capacity must be built under authoritarian rule, or that state building must precede democratization.**
+**The primary ten-year estimate is positive but imprecise. Several secondary twenty-year specifications show a positive adjusted association. A subsequent matched-country comparison does not establish that the twenty-year coefficient is larger. None of these results establishes that capacity must be built under authoritarian rule or before democratization.**
+
+This analysis was added in September to a project the author began in late March 2026. The archived note dated April already proposed capacity-building and incumbent-entrenchment mechanisms. These regressions are a separate aggregate exploration, not the origin or validation of that mechanism question. [History](../../docs/project_history.md).
 
 This is a first exploratory analysis using public historical data, with substantial AI assistance and no independent methodological review. The research question and motivation are Celine's. The data preparation and implementation should not be presented as independently validated technical work.
 
@@ -71,6 +73,24 @@ The analysis also examines prior growth, region controls, an administration comp
 
 The plan was written before estimating, with later additions recorded as amendments. [Validation checks](validation.json) cover source hashes, country-year uniqueness, time windows, sample membership, and an independent calculation of the primary OLS coefficient and HC3 standard error. Checks do not substitute for external methodological review.
 
+## Post-publication review: matched horizons and country influence
+
+These diagnostics were added after the initial release and the subsequent discussion of rigor. They are exploratory, not preregistered confirmation. [Code](rigor_audit.py) · [Full output, including all 57 country omissions](rigor_audit.json).
+
+Using the same 57 countries, current WDI GDP, and the same baseline-income and linear transition-year controls:
+
+| Outcome | Capacity coefficient | 95% HC3 interval |
+|---|---:|---:|
+| Ten-year annualized log growth | +1.18 | −0.14 to +2.50 |
+| Twenty-year annualized log growth | +1.26 | +0.43 to +2.09 |
+| Twenty-year minus ten-year growth | +0.08 | −0.63 to +0.79 |
+
+The last regression uses the within-country outcome difference with the same predictors. It directly checks the coefficient difference while retaining the relationship between the overlapping outcomes. The evidence does not establish a larger twenty-year association, nor establish equality. Greater precision must not be interpreted as a delayed causal mechanism.
+
+Removing each country in turn from the WDI twenty-year specification produces coefficients from +1.08 to +1.47; all 57 conditional HC3 intervals exclude zero. Region controls and replacing the linear year term with transition-decade indicators also leave positive estimates. These checks address particular specification and influence concerns, not unmeasured confounding, selection, shared GDP-source errors or capacity-measure uncertainty. All outputs, not only their signs, are retained.
+
+The original DDCG ten-year cohort and the twenty-year common cohort overlap in 53 countries. Equal sample sizes do not imply identical observations. The matched-horizon exercise uses the latter cohort for both windows and therefore does not replace the original primary specification.
+
 ## Asian cases and interpretation
 
 Korea and Taiwan have high pre-transition capacity in the selected measure and sustained subsequent growth. That description is consistent with institutional inheritance, but does not reveal what would have happened under earlier democratization. Indonesia has a lower pre-transition score and positive subsequent long-run growth; it should not be excluded for failing to fit a success-case narrative.
@@ -87,7 +107,7 @@ The original DDCG paper uses different identification strategies to examine demo
 
 ## Implications for this project
 
-The active [China WTO design](../../researchstrategy_ChinaWTO.md) now asks which forms of earlier support created capabilities accessible to new entrants and downstream firms, and which preserved advantages for established firms. Neither mechanism has been established by these country-level regressions.
+The [China WTO design](../../researchstrategy_ChinaWTO.md) continues a mechanism distinction already present in the note dated April, with more explicit access and beneficiary fields proposed in September. Its trade-opening setting differs from the earlier Korea democratization setting. Neither mechanism has been established by these country-level regressions.
 
 The existing patent-count audit only recomputes previously saved files from repository snapshot 0346cc0. It does not verify their upstream query. The files already show different sector growth before 2001, and industry totals cannot identify the distribution of benefits. The next steps are source auditing, separate measurement of access and privileges, and assessment of feasible beneficiary-level outcomes.
 
@@ -107,6 +127,7 @@ Use Python 3.12 and a fresh virtual environment. From this folder:
     .venv/bin/python analyze.py
     .venv/bin/python audit_gdp_sources.py
     .venv/bin/python validate_and_plot.py
+    .venv/bin/python rigor_audit.py
 
 The download script checks pinned hashes and extracts only the required source files. It stops if a publisher changes a file. The World Bank extract is preserved as a compressed public-data snapshot so API updates do not silently change this analysis. Downloaded raw files are excluded from Git.
 
