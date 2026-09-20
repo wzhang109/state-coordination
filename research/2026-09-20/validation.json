@@ -1,0 +1,87 @@
+[
+  {
+    "check": "Unique country-year keys in all three sources",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Main cohort has 57 unique countries",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Czech predecessor mismatch excluded",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Taiwan GDP absent from primary cohort; no invented Singapore transition",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "All 57 pre-capacity, five-year regime and exact ten-year outcome windows checked",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Korea 1987 to 1997 ten-year growth",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Taiwan 1991 to 2011 twenty-year growth independently calculated",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Primary coefficient and HC3 standard error independently reproduced",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "GDP-source comparison uses identical 55 countries",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Current WDI and MPD twenty-year comparison uses identical 57 countries",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Current WDI Korea twenty-year growth independently calculated",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "Surprising Mozambique MPD values match official Stata and Excel releases",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "SHA256 state_capacity_v1.zip",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "SHA256 ddcg_replication.zip",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "SHA256 maddison2023.dta",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "SHA256 mpd2023_sources.xlsx",
+    "passed": true,
+    "detail": ""
+  },
+  {
+    "check": "SHA256 wdi_real_gdppc.json",
+    "passed": true,
+    "detail": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "file": "state_capacity_v1.zip",
+    "url": "https://websites.umich.edu/~jkhanson/resources/StateCapacityDataset_v1.dta.zip",
+    "retrieved_utc": "2026-09-20T01:31:53.677474+00:00",
+    "bytes": 565351,
+    "sha256": "1b2fe3c12f2fddd033b3bf80cda0651e43aa1730d261c32f1fd7daba91c14aab"
+  },
+  {
+    "file": "ddcg_replication.zip",
+    "url": "https://knowledge.uchicago.edu/records/de4b6-9qv06/files/2014340data.zip?download=1",
+    "retrieved_utc": "2026-09-20T01:31:56.952426+00:00",
+    "bytes": 9429607,
+    "sha256": "edcf83060a5d0ddc1fed4985970ddab9adebc74821e4a20cd62b896fa963f375"
+  },
+  {
+    "file": "maddison2023.dta",
+    "url": "https://dataverse.nl/api/access/datafile/421303",
+    "retrieved_utc": "2026-09-20T01:35:42.175380+00:00",
+    "bytes": 10892389,
+    "sha256": "2bc62ccbd795d4d330ef9ead6dc29c39e956922b43264640eba52d2c244841cb"
+  },
+  {
+    "file": "mpd2023_sources.xlsx",
+    "url": "https://dataverse.nl/api/access/datafile/421302",
+    "retrieved_utc": "2026-09-20T01:38:06.879328+00:00",
+    "bytes": 4903804,
+    "sha256": "ecc5916ca12789b983fc4be437f8a354bbf4291323605324ac3e0aea4c57cbb6"
+  },
+  {
+    "file": "wdi_real_gdppc.json",
+    "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.KD?date=1960:2024&format=json&per_page=20000",
+    "retrieved_utc": "2026-09-20T01:59:18.396117+00:00",
+    "bytes": 3916058,
+    "sha256": "7d7495b7029f60880200f85172af131d4ed7d7821ba66ce4a5be082f200257da",
+    "snapshot": "wdi_real_gdppc.json.gz"
+  }
+]

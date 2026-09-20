@@ -1,0 +1,48 @@
+{
+  "capacity_raw_country_codes": 188,
+  "capacity_codes_with_nonmissing_estimates": 175,
+  "capacity_named_entities_with_nonmissing_estimates": 177,
+  "capacity_rows_with_nonmissing_estimates": 8254,
+  "capacity_country_years": 8837,
+  "democracy_countries": 184,
+  "observed_transitions": 122,
+  "eligible_first_transitions_pre_gdp": 88,
+  "first_transitions_complete_capacity": 71,
+  "main_countries": 57,
+  "main_transition_year_min": 1965,
+  "main_transition_year_max": 2000,
+  "panel_countries": 152,
+  "panel_country_decades": 467,
+  "normalization": {
+    "cap_z": {
+      "mean": -0.14427951844659162,
+      "sd": 0.6935760113816102,
+      "reference": "all first eligible transitions with complete pre-capacity, before GDP selection"
+    },
+    "admin_z": {
+      "mean": -0.6267070422535211,
+      "sd": 1.1049148139528926,
+      "reference": "all first eligible transitions with complete pre-capacity, before GDP selection"
+    }
+  },
+  "loo_range": [
+    0.4310091652196314,
+    0.9746042454620132
+  ],
+  "source_commit_folder": "wzhang109-state-coordination-0346cc0",
+  "software": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "statsmodels": "0.15.0"
+  },
+  "notes": [
+    "No regression identifies a causal effect of authoritarianism, Legalism or sequencing.",
+    "DDCG y is 100*log GDP. Results use percentage points of annualized log GDP growth.",
+    "Main outcomes span t-1 to t+9: exactly ten years; 20-year outcomes span t-1 to t+19.",
+    "Main sample includes subsequent regime reversals; no conditioning on democratic survival.",
+    "SER is not remapped to SRB because Serbia-Montenegro and Serbia have different boundaries.",
+    "Pre-1993 CZE capacity is Czechoslovakia, not Czech Republic; mixed predecessor/successor capacity windows excluded.",
+    "First eligible transition means first observed transition after >=5 nondemocratic years, not first transition in national history."
+  ]
+}
