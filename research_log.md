@@ -196,3 +196,15 @@ structure.
 - Decide how to handle Variant B's domestic-vs-foreign-filer scope question.
 - Run the actual pre-trend joint test once the State Support Index is on the same panel —
 this is the real test of whether the design holds up, not the eyeballed ratios above.
+
+## 2026-09-20 — Preliminary cross-country findings and narrower question
+
+- Added a real-data exploration using Hanson–Sigman capacity, DDCG transition coding and GDP, Maddison 2023, and current World Bank constant-price GDP.
+- Ten-year associations are imprecise. In the 57-country common twenty-year sample, WDI and Maddison estimates are positive. These are not causal estimates of authoritarianism, institutional order, or sector policy effects.
+- Preserved all specifications, source discrepancies, sample exclusions, scripts, and the analysis plan with post-result amendments. Corrected a Czechoslovakia/Czech Republic mismatch; Taiwan is missing from the DDCG GDP and WDI samples.
+- Narrowed the active question to capabilities available to new entrants and downstream firms versus advantages concentrated among existing recipients. New mechanism fields remain proposed, not validated.
+- Recomputed existing patent counts only. Upstream SQL and crosswalk were missing from the inspected snapshot; earlier log entries describe work that this release has not independently verified.
+- Updated the China WTO design to distinguish common-date and policy-specific comparisons, remove an unsupported estimator claim, and correct the interpretation of pre-trend tests.
+- Substantial AI assistance was used. Independent methodological review is still needed.
+
+Full details: [September 2026 research note](research/2026-09-20/README.md).

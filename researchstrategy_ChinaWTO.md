@@ -1,97 +1,68 @@
-# Measuring the Legacies of State Coordination
+# Earlier State Support and Access to Capabilities After Trade Opening
 
-## Trade Liberalization, Sectoral Support Structures, and Heterogeneous Adjustment in China's WTO Accession
+Wenwen (Celine) Zhang · Revised research design · 20 September 2026
 
-**Wenwen (Celine) Zhang**
-Initial methodological note for discussion
-July 2026 — companion design to the South Korea (1987) note, April 2026
+This revision narrows the July proposal. It separates exploratory findings, candidate mechanisms, and an empirical design that is not yet ready for causal estimation. Earlier versions remain in Git history.
 
----
+## Research question
 
-## 1. Research question
+**Around China's WTO accession, which forms of earlier state support left capabilities that new entrants and downstream firms could use, and which mainly preserved advantages for established firms?**
 
-This project asks why some sectors broadened firm entry, patenting, and competitive diffusion after China acceded to the WTO (December 11, 2001), while others became more concentrated among pre-existing incumbents. I use WTO accession — and the associated tariff reductions, quota removals, and market-access commitments — as a common trade-liberalization shock, and ask whether post-accession sectoral outcomes depended on the organizational support structures that sectors had already accumulated under pre-accession industrial policy.
+The object of study is access to resources created or allocated by policy. Trade opening is not a substitute for democratization. The accompanying [cross-country exploration](research/2026-09-20/README.md) is background evidence at a different level of analysis.
 
-This is the same sequencing question as the companion Korea note, applied to a different kind of political-economic opening: not democratization, but external trade liberalization under a binding multilateral commitment. Liberalization does not act on a blank institutional slate. It interacts with pre-existing state capacity, financing relationships, and sector-coordination mechanisms built up in the pre-accession period. The empirical challenge, as before, is to measure those inherited structures directly rather than through expenditure proxies.
+## Competing mechanisms
 
-## 2. Competing mechanisms
+| Candidate mechanism | Documentary evidence to code | Outcome evidence needed | Alternative explanations |
+|---|---|---|---|
+| Capabilities accessible beyond original recipients | Shared training, supplier development, technical resources, open eligibility, infrastructure access | Gains among new entrants or downstream firms; persistence after preferences end | Demand, imported technology, other reforms, selection of promising industries |
+| Advantages concentrated among existing recipients | Restricted approvals, named beneficiaries, exclusive financing eligibility, continuing entry barriers | Benefits concentrated among earlier recipients; limited access by others | Efficient scale, different risk or productivity, industry composition |
+| Both mechanisms operate | Broad support and selective privileges in the same policy | Wider capabilities coexist with concentrated access | Measurement error and aggregation hiding distinct groups |
 
-**Capacity-building mechanism.** Pre-accession industrial policy may have created durable coordination infrastructure — joint-venture technology-transfer channels, financing relationships with state banks, R&D mandates, supplier networks. Under this mechanism, WTO-driven exposure to international competition activates these structures: firms use inherited coordination advantages to adapt, upgrade, and diffuse innovation, and entry broadens as the sector professionalizes under competitive pressure.
+These are hypotheses, not findings. More patents, more concentration, or growth among incumbents alone cannot distinguish them. Text describes formal arrangements; actual implementation and use require separate evidence.
 
-**Incumbent-entrenchment mechanism.** Alternatively, pre-accession support may have created narrow, firm-specific advantages — approved-producer status, joint-venture quotas, preferential credit, investment-approval privileges. Under this mechanism, liberalization does not level the field. Firms holding these pre-existing privileges use them to consolidate as tariff walls fall, converting formal trade protection into informal regulatory protection (investment-approval barriers, JV-partner gatekeeping) that keeps new entry and innovation concentrated among the same incumbents.
+## Measurement
 
-As with the Korea design, the goal is not to ask whether WTO accession raised entry or innovation on average, but whether inherited state support changed the *distribution* of post-accession adjustment across sectors and firms.
+Retain the existing State Support Index and source links as an earlier measurement layer. Its dimensions are persistence, specificity, network breadth, and allocation. The direction field distinguishes protective, compressive, and neutral allocation provisions.
 
-## 3. Measurement: State Support Index
+The index is **not** a direct measure of state capacity or policy quality. Allocation=2 includes targeted privileges. A single combined score can conceal opposing mechanisms.
 
-The treatment variable is unchanged in form from the Korea design: a sector-level, source-traceable **State Support Index** built from archival policy materials — industrial plans, ministry orders, five-year-plan sectoral chapters, and investment-approval regulations — coded along four dimensions: **persistence, specificity, network breadth, allocation**.
+The next coding revision should separately record:
 
-$$\bar{C}_{sd} = \frac{1}{|\mathcal{T}_0|}\sum_{t \in \mathcal{T}_0} C_{std}, \qquad \mathcal{T}_0 = \{t : t < 2001\}$$
+1. the instrument and resource involved;
+2. eligible beneficiaries and entry conditions;
+3. whether new entrants, suppliers, or downstream users can obtain access;
+4. any exclusivity, expiry, or withdrawal condition;
+5. whether evidence concerns intent, a formal rule, implementation, or an observed result;
+6. source passage, date, uncertainty, and review status.
 
-$$S_s = \sum_{d \in D} w_d \, \tilde{C}_{sd}, \qquad \tilde{C}_{sd} = \frac{\bar{C}_{sd} - \mu_d}{\sigma_d}$$
+These fields have not been applied or validated. Existing rows must not be silently relabeled. Some sector outcomes have already been inspected, so the revision is exploratory. Independent coding and outcome-masked review of new material would improve credibility but cannot make prior work retrospectively blinded.
 
-**Critical constraint carried over from the pilot coding done to date:** every passage used to construct $\bar{C}_{sd}$ must predate WTO accession (December 11, 2001). The automobile-sector passages coded on 2026-07-19 from the 2004 *Automotive Industry Development Policy* (State Council/NDRC Order No. 8) **cannot serve as treatment-period evidence** — that document postdates accession and is better treated as a *post-treatment policy response* (see Section 6). The correct pre-treatment source for the automobile sector is the original 1994 *Automotive Industry Policy* (国务院关于印发汽车工业产业政策的通知, State Planning Commission, July 1994), which needs to be located and coded from scratch. Other sectors' pre-2001 sources — Eighth Five-Year Plan (1991–1995) and Ninth Five-Year Plan (1996–2000) sectoral chapters, ministry-level industrial catalogs — should be prioritized for the same reason.
+The 1994 and 1996 automobile and 1998 textile batches are pre-accession evidence. The 2004 automobile batch documents later arrangements and cannot define earlier exposure. The 1994 batch still needs a stronger official source.
 
-$w_d$ should be fixed **before** any outcome data is examined, and that fact should be recorded explicitly (date and version) in the source log, to preempt any concern about post-hoc weight selection.
+## Empirical scope and timing
 
-**Coder-blinding protocol (new addition, applies to both this note and the Korea note):** passages are coded for $\mathcal{T}_0$ using only the archival text and the fixed rubric, without reference to any post-accession outcome data for that sector. This should be stated explicitly in `docs/validation_plan.md` and logged per-run in the prompt log.
+The current two-sector sample supports documentary comparison and descriptive checks. It is insufficient for a credible causal event study or sector-clustered inference.
 
-## 4. Empirical design
+Before selecting an estimator, define a consistent event and comparison:
 
-Unlike Korea's single-date political transition, WTO accession created a **staggered, sector-specific liberalization schedule**: tariff bindings, quota removals, and market-access commitments phased in on different timelines by product category (e.g., automobiles had a multi-year tariff phase-down through 2006 and a longer path to JV-restriction relaxation; textiles and apparel saw the most consequential shock at the 2005 phase-out of the Multi-Fibre Arrangement quota system; telecom and financial services followed separate, longer schedules). This is a genuinely staggered-adoption design, not a single common shock — structurally the same estimation problem as the Compute Gatekeeping project's multi-date tier changes, and the same problem Callaway & Sant'Anna (2021) and Sun & Abraham (2021) were built to solve.
+- A **common accession-date comparison** asks whether sectors with different earlier support changed differently around 2001. It requires a defensible counterfactual trend and attention to anticipation, other reforms, and demand.
+- A **policy-specific timing comparison** uses independently documented tariff, quota, or entry-rule changes. These need not begin together or constitute comparable treatments. Timing and intensity may themselves be selected.
 
-**Baseline specification (single accession date, for direct comparability with the Korea design):**
+These designs are not interchangeable. Relative-time interactions alone do not implement a modern group-time treatment estimator or solve treatment heterogeneity. The earlier proposal's estimator claim is withdrawn pending a clear estimand, treatment definition, comparison group, and sufficient data.
 
-$$Y_{ust} = \alpha_u + \lambda_t + \sum_{k \neq -1} \beta_k \left(D_t^k \times \tilde{S}_s\right) + Z_{s0}'\delta_t + \varepsilon_{ust}, \qquad T^* = 2001$$
+Pre-period patterns are diagnostics. Failure to reject a pre-trend does not establish parallel trends, and choosing a favorable window after seeing outcomes does not restore identification. See [Roth (2022)](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236).
 
-**Preferred specification (sector-specific liberalization timing):** define $T^*_s$ as the year the sector's principal WTO-related liberalization commitment took effect (first major tariff cut, quota removal, or JV-restriction easing for that product category), and estimate group-time average treatment effects $ATT(g, t)$ by liberalization-timing cohort $g$ (Callaway & Sant'Anna 2021), aggregated into an event-study-style path (Sun & Abraham 2021) interacted with $\tilde{S}_s$:
+## Existing outcome files
 
-$$Y_{ust} = \alpha_u + \lambda_t + \sum_{k \neq -1} \beta_k \left(D_t^k \times \tilde{S}_s\right) + Z_{s0}'\delta_t + \varepsilon_{ust}, \qquad D_t^k = \mathbf{1}\{t - T^*_s = k\}$$
+Two patent-count variants for automobiles and textiles, 1990–2010, are saved in the data folder. The September analysis recomputed those counts but did not rerun their extraction. The log refers to a query and industry crosswalk absent from the inspected 0346cc0 snapshot. Recovering and auditing that provenance is the immediate data task.
 
-This avoids the negative-weighting bias that naive two-way fixed effects produces when already-liberalized sectors act as comparisons for later-liberalized sectors — the identical concern flagged in the Compute Gatekeeping log (Week 2), carried over here for consistency across the author's projects.
+In the saved main file, 1990–2000 compound annual patent growth was approximately 16.63% for automobiles and 12.75% for textiles. Their count ratio rose from 1.36 to 1.90 before accession. Post-2001 divergence cannot simply be attributed to earlier support. Industry totals do not distinguish new entrants from incumbents or identify who used a capability.
 
-A compact post-period summary, analogous to the Korea note's Section 4:
+## Next steps and decision points
 
-$$Y_{ust} = \alpha_u + \lambda_t + \theta\left(\text{Post}_{st} \times \tilde{S}_s\right) + Z_{s0}'\delta_t + \varepsilon_{ust}$$
+1. Recover the query, industry mapping, population definition, and deduplication rules; audit a sample against source records. Until provenance is established, keep the files descriptive and unverified upstream.
+2. Pilot the proposed mechanism fields, record disagreements, and seek independent review. If coders cannot distinguish access from selective privilege, revise the measure before expanding it.
+3. Evaluate outcome data for new entrants, original recipients, and downstream users. Add comparable sectors where source coverage permits; more sectors alone do not solve identification.
+4. Retain a historical or descriptive comparison if causal requirements cannot be met. A causal design is conditional on evidence, not a promised result.
 
-where $\text{Post}_{st} = \mathbf{1}\{t \geq T^*_s\}$ is now sector-specific rather than common across sectors.
-
-**Anticipation.** Unlike Korea's 1987 transition, WTO accession was negotiated over roughly 1999–2001 and was broadly anticipated; firms in some sectors may have begun adjusting before the formal accession date. This should be treated as a distinct, named identification threat (Section 6), not folded silently into the pre-trend check.
-
-## 5. Mechanism interpretation
-
-Under the **capacity-building mechanism**, higher pre-accession support should predict broader post-accession entry and innovation diffusion:
-$$\beta_k^{\text{entry}} > 0, \quad \beta_k^{\text{new-firm patents}} > 0, \quad \beta_k^{\text{HHI}} < 0 \quad (k \geq 0)$$
-
-Under the **incumbent-entrenchment mechanism**, higher pre-accession support should predict persistent concentration and incumbent-favored innovation:
-$$\beta_k^{\text{entry}} \leq 0, \quad \beta_k^{\text{incumbent patents}} > 0, \quad \beta_k^{\text{HHI}} > 0 \quad (k \geq 0)$$
-
-Dimension-specific specifications (replacing $\tilde{S}_s$ with $\tilde{C}_{sd}$ for each $d \in D$) test which form of pre-accession support — persistence, specificity, network breadth, or allocation — is doing the work. The **allocation** dimension is likely to be especially informative here: the 2004 policy's dual-track investment-approval system (簡易备案 for incumbents expanding capacity vs. strict 核准 for new entrants) is a clean example of a mechanism that could convert formal trade opening into continued informal protection for the same firms already holding approval status — this is exactly the kind of post-treatment institutional response that motivates treating the 2004 document as an outcome rather than a treatment source (Section 3).
-
-## 6. Identification concerns and robustness
-
-The central selection concern — that pre-accession support reflects the state's prior bet on already-promising sectors rather than the creation of reusable coordination capacity — carries over from the Korea design and should be addressed the same four ways: (i) pre-2001 event-study coefficients as a pre-trend diagnostic; (ii) baseline sector characteristics ($Z_{s0}$: capital intensity, pre-accession export exposure, pre-accession concentration) interacted with year effects; (iii) sensitivity checks against global demand shocks unrelated to accession; (iv) comparison of the archival index against simpler proxies (state-owned share, subsidy levels).
-
-Three threats are distinctive to this design and were not present in the Korea note:
-
-**Anticipation.** WTO accession was announced and negotiated well before December 2001. Robustness checks should test alternative $T^*$ definitions (e.g., 1999 bilateral agreement date vs. 2001 formal accession) and inspect whether adjustment visibly begins before the formal date.
-
-**Staggered, unequal phase-in intensity.** Because different product categories liberalized on different schedules and by different amounts, $T^*_s$ and treatment intensity are themselves policy choices correlated with sector characteristics — this should be treated as a second selection margin, separate from the selection concern about $S_s$ itself, and addressed by including the pre-announced phase-in schedule (from the accession protocol's tariff-binding tables) as a control, not only as the timing variable.
-
-**Treating the 2004 policy as outcome, not treatment.** Using a post-accession document (2004) as descriptive evidence of *how* pre-existing incumbents adapted their regulatory tools after liberalization is legitimate and useful — but only as an outcome-side qualitative narrative, clearly separated from the quantitative $S_s$ construction. The data folder and any future write-up must keep these two roles visually and structurally distinct (see `data/README.md`'s existing real/demo separation, which should be extended to a treatment-period/outcome-period separation once 1994-era sources are added).
-
-Standard errors clustered at the sector level; given a likely small number of sectors, wild-cluster bootstrap or randomization inference should be planned for from the start rather than added late.
-
-## 7. AI-assisted measurement workflow
-
-Unchanged in structure from the Korea note and the existing `docs/` templates in this repository: fixed rubric, structured output schema, source-level metadata, prompt/output logging, benchmark validation against hand-coded samples, and human review routing for ambiguous cases. The coder-blinding protocol described in Section 3 should be added explicitly to `docs/validation_plan.md` as a named requirement, not left implicit.
-
-**Near-term outputs:** (i) locate and digitize the 1994 *Automotive Industry Policy* and at least one additional pre-2001 sector source (Eighth or Ninth Five-Year Plan sectoral chapter); (ii) recode a real pre-treatment batch from these sources, replacing the 2004-sourced batch's role as "treatment evidence"; (iii) build the WTO accession protocol's sector-level tariff-binding schedule as the phase-in timing variable; (iv) identify and test access to outcome data sources — China Industrial Enterprise Database (NBS, firm entry and characteristics), SIPO/CNIPA patent records, sector-level concentration constructed from the Enterprise Database itself; (v) a short validation memo once a pre-2001 benchmark sample exists.
-
-## 8. Expected contribution
-
-Substantively, this note extends the Korea design's underlying question — whether liberalization interacts with, rather than replaces, inherited state coordination — to a trade-opening rather than political-opening shock, and to a staggered rather than single-date treatment. Methodologically, it reuses the same source-traceable coding infrastructure and the same staggered-adoption estimator choice as the author's other applied work, making the three projects (Korea; China/WTO; Compute Gatekeeping) a consistent methodological program applied to three distinct institutional settings, rather than three unrelated exercises.
-
-## 9. Immediate next step
-
-Recode the automobile sector's pre-treatment State Support Index entries from the **1994** original policy text. Until this is done, `data/real_coded_passages_automobiles.csv` should be understood as *post-treatment descriptive material*, not as input to $S_s$.
+The intended contribution is a source-traceable account of **what earlier support made possible, for whom, and under what access conditions**. It does not require finding state intervention uniformly beneficial or harmful.

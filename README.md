@@ -1,199 +1,70 @@
-# State Coordination — Policy-Text Measurement and Event-Study Workflow
+# State Coordination
 
-Source-traceable measurement of state industrial-policy support, built to turn policy
-texts into auditable sector-level metrics that can be tested with event-study panel
-designs.
+**Which forms of earlier state support leave capabilities that new entrants and downstream firms can use, and which mainly preserve advantages for established firms?**
 
-The repository contains a synthetic demo illustrating the full pipeline end-to-end, and a
-growing set of real coded passages from primary policy documents. **Estimates currently in
-`outputs/` run on synthetic data only and should not be interpreted substantively.**
+I approach this question through development economics and public policy, with an interest in how institutions shape people's opportunities over time. This project uses historical policy documents to measure what governments supported, how support was allocated, and who could use the resulting resources.
 
-## Why this repo exists
+The question grew out of a broader hypothesis about state building, democratization, and long-run prosperity. The current research separates **state capacity**, **industrial-policy support**, and **political regime**. It does not assume that authoritarian rule is necessary for development, or that a higher support score measures more effective government.
 
-The research question is whether inherited state coordination structures shape
-post-transition outcomes such as firm entry, patenting, and concentration. Two hypotheses
-are in play and both are plausible: those structures may persist as genuine organizational
-capital that helps new entrants, or they may persist as barriers that entrench incumbents.
+## Preliminary findings — September 2026
 
-The binding constraint on answering this is measurement. "State support for sector X in
-1994" is not a number anyone publishes. It exists as laws, five-year plans, ministry
-directives, and R&D mandates. So most of the work here is turning that text into a number
-that survives scrutiny:
+A first exploratory analysis combines public state-capacity, democratization, and GDP data. Higher capacity before a qualifying democratic transition is positively associated with growth over the following twenty years in a common sample covered by World Bank and Maddison data. Ten-year estimates are less precise. These are adjusted associations, not estimates of the causal effects of authoritarianism or institutional sequencing.
 
-1. maintain document-level source logs;
-2. code passages against a rubric fixed before outcomes are examined;
-3. validate machine-assisted scores against hand-coded benchmarks;
-4. construct a sector-level support index;
-5. merge the index into a sector-year panel;
-6. estimate an event-study specification.
+**[Read the findings, methods, and limitations](research/2026-09-20/README.md)** · **[中文说明](research/2026-09-20/findings.zh-CN.md)**
 
-The goal is not to automate substantive judgment away. It is to make measurement scalable
-while keeping every score traceable to documentary evidence and human review.
+The analysis includes sample lists, all specifications, source checks, and scripts. It provides context for the narrower policy question; it does not test the sector-level mechanisms below.
 
-## Empirical settings
+## Current research question
 
-The measurement approach is being developed for two independent settings.
+The active setting is **China around WTO accession in 2001**. The proposed comparison distinguishes provisions that may create capabilities accessible beyond their original recipients from provisions that restrict access to selected firms.
 
-**Setting 1 — South Korea, 1987 democratization.** *Currently paused.* The sector-year
-outcome data required for the panel is classified and not accessible. The synthetic demo
-in this repository is built around this setting, which is why event time is indexed to
-1987. May resume if data access changes.
+Evidence to investigate includes shared training, supplier development, technical infrastructure, financing eligibility, production approvals, and joint-venture restrictions. A policy can contain both broadly accessible support and selective privileges. Intent in a policy document is not evidence of implementation or impact.
 
-**Setting 2 — China, 2001 WTO accession.** *Active.* All real coded data comes from this
-setting.
+The next empirical question is whether the benefits of earlier support extended to **new entrants and downstream firms**, or remained concentrated among **pre-existing recipients**, as market conditions changed. Industry patent totals alone cannot distinguish these mechanisms.
 
-Both settings share a design feature worth naming precisely: a **common event date**, with
-sectors differing in **exposure intensity** (their pre-transition support score). This is a
-differential-exposure event study, not a staggered-adoption design — the distinction
-matters for which estimators are appropriate.
+See the [revised research design](researchstrategy_ChinaWTO.md) and [measurement priorities](docs/current_research_question.md).
 
-## Data status
+## What exists, and what remains untested
 
-| Sector | Year | Document | Passages | Relative to 2001 accession |
-|---|---|---|---|---|
-| Automobiles | 1994 | 汽车工业产业政策 | 13 | Pre |
-| Automobiles | 1996 | 九五纲要, automotive section | 3 | Pre |
-| Automobiles | 2004 | 汽车产业发展政策 (State Council/NDRC Order No. 8) | 9 | Post |
-| Textiles | 1998 | 国发〔1998〕2号 | 8 | Pre |
+| Material | Current status | What it supports |
+|---|---|---|
+| Cross-country analysis, September 2026 | Real public data; exploratory regressions and source diagnostics | Associations between pre-transition capacity and later growth |
+| Chinese policy passages | Four batches covering automobiles and textiles | Source-traceable measurement and policy continuity |
+| Saved sector patent counts, 1990–2010 | Files exist; original query and industry mapping need a complete audit | Internal descriptive checks, not a verified policy effect |
+| Event-study scripts and plots in the outputs folder | Synthetic demonstration | Illustration of a workflow, not empirical findings |
+| Capabilities versus incumbent advantages | Revised research question | Hypotheses awaiting measurement, independent review, and suitable outcomes |
 
-The pre-transition batches (1994, 1996, 1998) are the inputs to the support index. See
-`data/README.md` for file-by-file provenance and source strength.
+The saved patent files already show different growth patterns between automobiles and textiles before 2001. With only two sectors, the project does not support a credible causal event study or reliable sector-clustered inference.
 
-### The 2004 batch has a different role
+## Policy-text coverage
 
-The 2004 automotive policy is **not** used to construct the pre-transition index. It
-documents institutional continuity across the transition. Three provisions coded in the
-1994 policy reappear in the 2004 policy in near-identical or verbatim form, despite WTO
-accession in 2001:
+| Sector | Year | Document | Coded passages | Role |
+|---|---|---|---:|---|
+| Automobiles | 1994 | 汽车工业产业政策 | 13 | Pre-accession support |
+| Automobiles | 1996 | Ninth Five-Year Plan, automotive section | 3 | Pre-accession support |
+| Automobiles | 2004 | 汽车产业发展政策 | 9 | Post-accession policy continuity |
+| Textiles | 1998 | 国发〔1998〕2号 | 8 | Pre-accession support |
 
-- ceiling of two joint ventures per foreign firm per vehicle category (1994 Art. 29 → 2004 Art. 48)
-- 50% minimum Chinese equity share in vehicle and engine JVs (1994 Art. 32 → 2004 Art. 48)
-- the designated list of vehicle import ports (1994 Art. 36 → 2004 Art. 58), unchanged
+The 2004 document is not used to define pre-accession support. Source strength and coding history are documented in [data/README.md](data/README.md). The rubric records persistence, specificity, network breadth, allocation, and an allocation-direction field. **A high allocation score can denote selective privilege; it is not a measure of beneficial capacity.**
 
-Whether that continuity is capacity-building or incumbent-entrenching is the empirical
-question the index is built to address.
+The original South Korea 1987 design remains a historical design note. Required outcome coverage has not been secured for this project. Related public research and replication resources exist, so the earlier blanket description of Korean data as classified was too strong. Coverage for the proposed post-1987 analysis still needs checking.
 
-## Current scale and what it supports
+## Research practice
 
-Real coded data currently covers **2 sectors**. This has two consequences that are stated
-here rather than left for a reader to discover:
+- Keep documentary evidence, constructed measures, and outcome interpretation separate.
+- Record policy dates and beneficiaries; do not infer capacity from later economic success.
+- Preserve existing coded batches. New mechanism fields require a revised rubric and independent review.
+- Disclose that outcome patterns have already been examined. New coding changes are exploratory, not retrospectively preregistered or fully blinded.
+- Report null and conflicting results. A non-significant pre-trend test does not establish parallel trends.
 
-**Clustered inference is not yet available.** The event-study specification in
-`scripts/02_` clusters standard errors at the sector level. Clustered standard errors
-require many more clusters to be valid; with two, the reported inference would be
-meaningless. The script is retained as a demonstration of the intended workflow, not as an
-estimation of the current sample.
+The research motivation and question are mine. Coding, data preparation, and analysis use substantial AI assistance. I am still developing the technical methods; the new analysis has not undergone independent methodological review.
 
-**Cross-sector standardization is disabled below a threshold.** With only two sectors,
-z-standardizing a dimension across sectors returns exactly ±1 regardless of the underlying
-gap, discarding all magnitude information. `scripts/01_` therefore falls back to raw 0–2
-dimension means until sector coverage is sufficient, and prints which scale it used.
+## Reproduce
 
-At present the repository supports descriptive measurement and documentation of
-institutional continuity, not causal estimation. The next step is horizontal expansion —
-one core pre-transition document per additional sector — rather than deeper coverage of
-sectors already included.
+The [analysis folder](research/2026-09-20/README.md#reproduce) contains requirements, a source manifest, download script, and instructions. Source files are obtained from their original publishers; the exact public World Bank extract is preserved because its live API can change.
 
-## Event-study demo output
+The older synthetic demo remains in the scripts folder. Its output status is described in [outputs/README.md](outputs/README.md).
 
-![Event-study demo output](outputs/event_study_plot.png)
+## Related project
 
-*Synthetic data only.* The plot shows interactions between event-time indicators and the
-pre-transition State Support Index, with sector and year fixed effects and k = −1 omitted
-as the reference period. Coefficients are not substantive results; the figure illustrates
-the output format of the workflow.
-
-**Pre-period coefficients — left of the dashed line — are where the identifying assumption
-is tested, not decoration.** The design identifies effects only if, absent the transition,
-sectors with different support scores would have followed parallel paths. If pre-period
-coefficients are jointly indistinguishable from zero, that assumption is supported. If they
-trend, the design does not identify a causal effect and results are reported as descriptive.
-
-## Repository structure
-
-```text
-state-coordination/
-├── README.md
-├── requirements.txt
-├── data/
-│   ├── README.md
-│   ├── demo_coded_passages.csv                    # created by script 00
-│   ├── demo_sector_year.csv                       # created by script 00
-│   ├── demo_support_index.csv                     # created by script 01
-│   ├── prompt_log_automobiles_2026-07-19.md       # AI-assisted coding run log
-│   ├── real_coded_passages_automobiles_1994.csv
-│   ├── real_coded_passages_automobiles_1996.csv
-│   ├── real_coded_passages_automobiles_2004.csv
-│   ├── real_coded_passages_textiles.csv
-│   ├── real_source_log_automobiles.csv            # 2004 sources
-│   ├── real_source_log_automobiles_1994.csv
-│   └── real_source_log_textiles.csv
-├── docs/
-│   ├── coding_rubric.md
-│   ├── validation_plan.md
-│   ├── prompt_log_template.md
-│   └── source_log_template.csv
-├── scripts/
-│   ├── 00_generate_demo_data.py
-│   ├── 01_construct_index.py
-│   └── 02_event_study_demo.py
-└── outputs/
-    ├── README.md
-    ├── event_study_coefficients.csv               # created by script 02
-    └── event_study_plot.png                       # created by script 02
-```
-
-## How to run
-
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-python scripts/00_generate_demo_data.py
-python scripts/01_construct_index.py
-python scripts/02_event_study_demo.py
-```
-
-Scripts must run in order; each depends on the previous one's output.
-
-## What is auditable
-
-- `docs/coding_rubric.md` defines coding dimensions and score meanings before analysis.
-- `docs/source_log_template.csv` shows the metadata needed to trace a coded passage back to its source.
-- `docs/prompt_log_template.md` gives a structured way to log AI-assisted coding runs; `data/prompt_log_automobiles_2026-07-19.md` is a completed instance.
-- `docs/validation_plan.md` covers benchmark construction, weighting sensitivity, reliability, and human review routing.
-- `scripts/01_construct_index.py` makes weighting and standardization choices explicit and reports which scale was used.
-
-Every real coded passage carries `passage_excerpt`, `coder_id`, `confidence`, and
-`review_status`, so any individual score can be contested on the evidence rather than in
-the abstract.
-
-## Limitations
-
-- Coefficients, plots, and output tables in `outputs/` are generated from synthetic data and carry no substantive interpretation.
-- Real coded data has not yet been run through the quantitative pipeline; outcome variables (sector-year firm entry, patenting, concentration) are not yet assembled.
-- Single coder to date. Reliability evidence and the plan for addressing this are in `docs/validation_plan.md`.
-- Source strength is uneven across batches. The 2004 document is verified against the official State Council gazette; the 1994 document is currently verified against an archived press reprint plus researcher screenshots. Replacing the 1994 source with an official one is an open task.
-- Sector coverage is imbalanced (automobiles: 3 documents; textiles: 1). A post-accession textile document is missing and would mirror the 2004 automotive batch.
-
-## Related work
-
-This repository is the methodological ancestor of a parallel project applying the same
-measurement approach to a different domain:
-
-**[Accountability Continuity Research](https://github.com/wzhang109/Accountability_Continuity_Research)**
-— an institutional framework for human-agentic task allocation. It asks which decisions
-require a continuous, accountable human as AI systems become more capable, and builds an
-Accountability Continuity Index using the same measurement design pattern used here:
-dimensions fixed before outcomes are examined, every score traceable to primary evidence,
-and ambiguous cases routed to human review rather than machine finalization.
-
-The rubric schema is deliberately shared across both projects (`coder_id`, `confidence`,
-`review_status`) so that measurement decisions remain auditable in the same way regardless
-of subject matter.
-
-The identification strategies differ and should not be conflated. This project uses a
-common event date with sectors differing in exposure intensity. The accountability project
-faces staggered adoption timing with an ordinal treatment, which calls for a different
-estimator family.
+[Accountability Continuity](https://github.com/wzhang109/Accountability_Continuity) examines human review, judgment, and responsibility in AI-assisted work. The projects share an interest in how institutional arrangements affect people's capabilities. They have different data and research designs; evidence from one does not validate the other.
