@@ -1,70 +1,73 @@
 # State Coordination
 
-**Which forms of earlier state support leave capabilities that new entrants and downstream firms can use, and which mainly preserve advantages for established firms?**
+**How do inherited state institutions and policy support shape later development, and who can use the capabilities they leave behind?**
 
-I approach this question through development economics and public policy, with an interest in how institutions shape people's opportunities over time. This project uses historical policy documents to measure what governments supported, how support was allocated, and who could use the resulting resources.
+I began this independent project in **late March 2026**, when I formed an initial hypothesis and put forward a research proposal about state building, democratization, and long-run prosperity. This origin date is a retrospective account recorded in September. The archived Korea note is dated April 2026; the GitHub history begins on 19 July. These dates refer to different stages of the work.
 
-The question grew out of a broader hypothesis about state building, democratization, and long-run prosperity. The current research separates **state capacity**, **industrial-policy support**, and **political regime**. It does not assume that authoritarian rule is necessary for development, or that a higher support score measures more effective government.
+My background is in development economics and public policy. I am interested in how institutional conditions influence people's opportunities over time. The project began with a conjecture about Asian development experiences; it does not assume that authoritarian rule or a particular political sequence is necessary for prosperity.
 
-## Preliminary findings — September 2026
+**Start here:** [Project history and date evidence](docs/project_history.md) · [为什么研究、做了什么、得到什么、还不知道什么](docs/research_story.zh-CN.md) · [一步一步理解研究](docs/study_guide.zh-CN.md)
 
-A first exploratory analysis combines public state-capacity, democratization, and GDP data. Higher capacity before a qualifying democratic transition is positively associated with growth over the following twenty years in a common sample covered by World Bank and Maddison data. Ten-year estimates are less precise. These are adjusted associations, not estimates of the causal effects of authoritarianism or institutional sequencing.
+## The questions and their relationship
 
-**[Read the findings, methods, and limitations](research/2026-09-20/README.md)** · **[中文说明](research/2026-09-20/findings.zh-CN.md)**
+| Level | Question | Status |
+|---|---|---|
+| Broad motivation | How do institutions create conditions for lasting development? | Organizing concern |
+| Original hypothesis | Does capacity accumulated before democratization help explain later prosperity, and is that sequence necessary? | Associations explored; necessity and causal sequencing not established |
+| Mechanism, already in the note dated April | Does earlier support leave usable capabilities beyond original recipients, or preserve incumbent advantages? | Competing explanations requiring direct evidence |
+| China WTO pilot | What do policy documents specify about resources, beneficiaries, and access around trade opening? | Early coding exists; implementation and beneficiary outcomes remain incomplete |
+| September cross-country analysis | Among qualifying democratic transitions, how does prior capacity relate to later GDP growth? | Exploratory evidence at a different level of analysis |
 
-The analysis includes sample lists, all specifications, source checks, and scripts. It provides context for the narrower policy question; it does not test the sector-level mechanisms below.
+The move from South Korea's democratization to China's WTO accession changed the setting and event. The mechanism question continued, but trade opening is not a substitute for democratization. The cross-country regressions neither validate the policy index nor establish the sector mechanisms. See the [current question map](docs/current_research_question.md).
 
-## Current research question
+## What I have done and found so far
 
-The active setting is **China around WTO accession in 2001**. The proposed comparison distinguishes provisions that may create capabilities accessible beyond their original recipients from provisions that restrict access to selected firms.
+The repository contains an early methodological proposal, policy passages coded against a rubric, source records, saved sector patent counts, a synthetic workflow demonstration, and a September analysis using real public country data. Coding, data preparation and writing use substantial AI assistance. There is no formal research supervisor at present; independent methodological and coding review remain incomplete.
 
-Evidence to investigate includes shared training, supplier development, technical infrastructure, financing eligibility, production approvals, and joint-venture restrictions. A policy can contain both broadly accessible support and selective privileges. Intent in a policy document is not evidence of implementation or impact.
+The original ten-year DDCG estimate is positive but imprecise. Selected twenty-year specifications using World Bank and Maddison data show a positive adjusted association. A subsequent comparison on identical countries does not establish that the twenty-year coefficient is larger than the ten-year coefficient. These are associations, not effects of authoritarianism, political order, or a specific policy.
 
-The next empirical question is whether the benefits of earlier support extended to **new entrants and downstream firms**, or remained concentrated among **pre-existing recipients**, as market conditions changed. Industry patent totals alone cannot distinguish these mechanisms.
+**[Results, methods and limits](research/2026-09-20/README.md)** · **[中文结果](research/2026-09-20/findings.zh-CN.md)**
 
-See the [revised research design](researchstrategy_ChinaWTO.md) and [measurement priorities](docs/current_research_question.md).
+Two other lessons matter for the pilot. First, a high support score may represent selective privileges, so it cannot be read as better government or greater productive capacity. Second, existing industry patent totals do not identify who benefited, and the two industries were already growing differently before 2001.
 
-## What exists, and what remains untested
+## What the materials can support
 
 | Material | Current status | What it supports |
 |---|---|---|
-| Cross-country analysis, September 2026 | Real public data; exploratory regressions and source diagnostics | Associations between pre-transition capacity and later growth |
-| Chinese policy passages | Four batches covering automobiles and textiles | Source-traceable measurement and policy continuity |
-| Saved sector patent counts, 1990–2010 | Files exist; original query and industry mapping need a complete audit | Internal descriptive checks, not a verified policy effect |
-| Event-study scripts and plots in the outputs folder | Synthetic demonstration | Illustration of a workflow, not empirical findings |
-| Capabilities versus incumbent advantages | Revised research question | Hypotheses awaiting measurement, independent review, and suitable outcomes |
+| Cross-country data and regressions | Real public data; exploratory source and specification checks | Conditional associations within defined samples |
+| Four Chinese policy batch files | 35 coding rows; uneven source strength and incomplete independent validation | Reviewable interpretations of formal policy provisions |
+| Patent counts, 1990–2010 | Internally recomputed; original query and industry mapping still need audit | Checks on saved series, not a verified policy effect |
+| Event-study demonstration in outputs | Synthetic data | Illustration of calculations |
+| Broader access versus incumbent advantages | An early mechanism question with revised measurement requirements | Hypotheses, not established findings |
 
-The saved patent files already show different growth patterns between automobiles and textiles before 2001. With only two sectors, the project does not support a credible causal event study or reliable sector-clustered inference.
+There are only two sectors in the current pilot. That is insufficient for a credible causal event study or reliable sector-clustered inference. Existing review labels in coding files do not establish independent validation of every score or interpretation.
 
 ## Policy-text coverage
 
-| Sector | Year | Document | Coded passages | Role |
+| Sector | Year | Document | Coding rows | Role |
 |---|---|---|---:|---|
-| Automobiles | 1994 | 汽车工业产业政策 | 13 | Pre-accession support |
-| Automobiles | 1996 | Ninth Five-Year Plan, automotive section | 3 | Pre-accession support |
-| Automobiles | 2004 | 汽车产业发展政策 | 9 | Post-accession policy continuity |
-| Textiles | 1998 | 国发〔1998〕2号 | 8 | Pre-accession support |
+| Automobiles | 1994 | 汽车工业产业政策 | 14 | Pre-accession provisions |
+| Automobiles | 1996 | Ninth Five-Year Plan, automotive section | 3 | Pre-accession provisions |
+| Automobiles | 2004 | 汽车产业发展政策 | 9 | Later continuity evidence |
+| Textiles | 1998 | 国发〔1998〕2号 | 8 | Pre-accession provisions |
+| Textiles | 1996 | Ninth Five-Year Plan, textile section | 1 | Pre-accession provisions; in the same textile file |
 
-The 2004 document is not used to define pre-accession support. Source strength and coding history are documented in [data/README.md](data/README.md). The rubric records persistence, specificity, network breadth, allocation, and an allocation-direction field. **A high allocation score can denote selective privilege; it is not a measure of beneficial capacity.**
+These are coding rows, not independent policies, firms, or implementation observations. A passage can appear under more than one dimension. The earlier homepage understated the 1994 count and omitted the 1996 textile row; this update corrects the inventory without changing any scores.
 
-The original South Korea 1987 design remains a historical design note. Required outcome coverage has not been secured for this project. Related public research and replication resources exist, so the earlier blanket description of Korean data as classified was too strong. Coverage for the proposed post-1987 analysis still needs checking.
+The 2004 document cannot define pre-2001 exposure. Recurrence of wording after 2001 can document continuity but cannot by itself establish what researchers would have known beforehand or how a policy operated. [Data notes](data/README.md) record source and interpretation limits.
 
-## Research practice
+## Next evidence task
 
-- Keep documentary evidence, constructed measures, and outcome interpretation separate.
-- Record policy dates and beneficiaries; do not infer capacity from later economic success.
-- Preserve existing coded batches. New mechanism fields require a revised rubric and independent review.
-- Disclose that outcome patterns have already been examined. New coding changes are exploratory, not retrospectively preregistered or fully blinded.
-- Report null and conflicting results. A non-significant pre-trend test does not establish parallel trends.
+Trace one policy arrangement from its source text to formal eligibility, actual use, and a measurable result. For example, a policy proposing testing facilities does not establish whether new firms could afford or obtain access. Find that evidence before expanding a support index or promising a causal estimate.
 
-The research motivation and question are mine. Coding, data preparation, and analysis use substantial AI assistance. I am still developing the technical methods; the new analysis has not undergone independent methodological review.
+The [China WTO design](researchstrategy_ChinaWTO.md) remains a candidate mechanism study. Continuing the institutional-sequencing question or pursuing this pilot requires an explicit choice based on substantive interest, the literature, and feasible evidence. The current regressions do not decide between those routes.
 
-## Reproduce
+## Reproduce and review
 
-The [analysis folder](research/2026-09-20/README.md#reproduce) contains requirements, a source manifest, download script, and instructions. Source files are obtained from their original publishers; the exact public World Bank extract is preserved because its live API can change.
+The [September analysis folder](research/2026-09-20/README.md#reproduce) contains source versions, download instructions, model tables and code. Later diagnostics are labeled as post-result additions. Code and source checks help detect mistakes; they do not validate causal assumptions.
 
-The older synthetic demo remains in the scripts folder. Its output status is described in [outputs/README.md](outputs/README.md).
+The [research log](research_log.md) preserves earlier entries, with dated clarifications where interpretations have changed. The [history page](docs/project_history.md) links the archived Korea note and distinguishes its printed April date from its misleading filename and July upload date.
 
-## Related project
+## Related work
 
-[Accountability Continuity](https://github.com/wzhang109/Accountability_Continuity) examines human review, judgment, and responsibility in AI-assisted work. The projects share an interest in how institutional arrangements affect people's capabilities. They have different data and research designs; evidence from one does not validate the other.
+[Accountability Continuity](https://github.com/wzhang109/Accountability_Continuity) examines human review, judgment and responsibility in AI-assisted work. It shares an interest in institutional conditions and capabilities, but has different data and questions.

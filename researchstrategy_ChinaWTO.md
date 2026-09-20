@@ -2,7 +2,9 @@
 
 Wenwen (Celine) Zhang · Revised research design · 20 September 2026
 
-This revision narrows the July proposal. It separates exploratory findings, candidate mechanisms, and an empirical design that is not yet ready for causal estimation. Earlier versions remain in Git history.
+This design develops a mechanism question already present in the Korea note dated April 2026. The project began in late March according to the author's retrospective account; the China WTO setting entered the repository in July. September revisions clarify measurement and identification requirements. They do not mark the origin of the mechanism question. [Project history](docs/project_history.md) records the supporting dates.
+
+This is a candidate empirical route, not a causal design already supported by the available data. Changing from democratization to trade opening preserves part of the substantive question but changes the event and counterfactual. Further commitment to this route depends on finding suitable evidence of beneficiaries and actual access.
 
 ## Research question
 
@@ -18,7 +20,7 @@ The object of study is access to resources created or allocated by policy. Trade
 | Advantages concentrated among existing recipients | Restricted approvals, named beneficiaries, exclusive financing eligibility, continuing entry barriers | Benefits concentrated among earlier recipients; limited access by others | Efficient scale, different risk or productivity, industry composition |
 | Both mechanisms operate | Broad support and selective privileges in the same policy | Wider capabilities coexist with concentrated access | Measurement error and aggregation hiding distinct groups |
 
-These are hypotheses, not findings. More patents, more concentration, or growth among incumbents alone cannot distinguish them. Text describes formal arrangements; actual implementation and use require separate evidence.
+The capacity-building versus incumbent-entrenchment distinction is documented in the early Korea note; the access fields below make it more operational. These are hypotheses, not findings. More patents, more concentration, or growth among incumbents alone cannot distinguish them. Text describes formal arrangements; actual implementation and use require separate evidence.
 
 ## Measurement
 

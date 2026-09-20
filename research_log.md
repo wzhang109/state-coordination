@@ -1,8 +1,12 @@
 # Research Log — State Coordination / China WTO Project
 
-Weekly entries. Format: what was done / what was found or decided / what's next.
-Work is AI-assisted (passage location, drafting, code); all coding judgments
-and final content are human-reviewed before acceptance.
+This log preserves historical entries and adds dated corrections. Entries report work at the time and are not independent certification of every extraction, coding judgment or interpretation. Research is substantially AI-assisted; independent methodological and coding review remain incomplete.
+
+## Retrospective origin note — added 20 September 2026
+
+The author confirms that the project began in **late March 2026**, with an initial hypothesis and research proposal. The original March version has not been located in this review, and exact submission, discussion or circulation dates are not established. The archived Korea note is printed **April 2026**, although its filename contains 2026.5; it already sets out capacity-building and incumbent-entrenchment mechanisms. GitHub commits begin **19 July 2026**, not at the intellectual start of the project. See [project history](docs/project_history.md) for evidence and date limitations.
+
+Later clarifications supersede conflicting interpretations in historical entries. In particular, earlier claims about estimator implementation, the cause of patent-series anomalies, the sufficiency of pre-trend tests, or completed upstream extraction must not be treated as verified by this log alone.
 
 ---
 
@@ -208,3 +212,12 @@ this is the real test of whether the design holds up, not the eyeballed ratios a
 - Substantial AI assistance was used. Independent methodological review is still needed.
 
 Full details: [September 2026 research note](research/2026-09-20/README.md).
+
+## 2026-09-20 — Follow-up: origins, coherence and researcher understanding
+
+- Recorded the author's late-March start retrospectively; did not backdate commits or infer an unverified recipient or exact proposal day.
+- Inspected the archived Korea note: printed April 2026, uploaded July 19, with the two mechanisms already present. Corrected the earlier implication that September introduced this question; the China WTO move changed the setting.
+- Reconciled the inventory with the current CSVs: 14 + 3 + 9 + 9 = 35 coding rows. The textile file includes one 1996 row in addition to eight 1998 rows. Multiple dimensions can reuse one passage.
+- Published the post-result matched-horizon and full single-country omission diagnostics. The horizon coefficient difference is imprecise; stronger significance over twenty years does not demonstrate a larger association.
+- Added a Chinese research account and a stepwise understanding guide using a real policy record, a country-level calculation, and exercises. These are learning materials, not a claim that the researcher has completed or mastered every step.
+- Kept the China pilot and cross-country analysis distinct. The next evidence task is one policy-to-beneficiary record, with actual access and alternative explanations assessed separately.
