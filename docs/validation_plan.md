@@ -79,16 +79,14 @@ Reliability evidence, in order of strength:
 
 Dimension-level disagreement is treated diagnostically. Any dimension falling below kappa 0.60 triggers a rubric revision, logged with date and reason.
 
-### 8. Identifying assumption and pre-trends
+### 8. Identification and pre-trends
 
-The event-study specification identifies effects under a parallel-trends assumption: absent the transition, sectors with different pre-transition support scores would have followed parallel paths in the outcome variable.
+A causal differential-exposure comparison requires defensible counterfactual trends and attention to policy selection, anticipation, and other changes. Pre-period coefficients are diagnostics, not proof of the assumption. Failure to reject a pre-trend may reflect low power. Choosing an apparently flat window after observing outcomes does not restore identification.
 
-Pre-period coefficients (k < -1, with k = -1 omitted as reference) are the test of that assumption, not decoration. They are reported individually and as a joint test.
+The current two-sector data do not support reliable sector-clustered inference. Any alternative windows or trend adjustments must be labeled exploratory and reported alongside the original specification. See [Roth (2022)](https://www.aeaweb.org/articles?id=10.1257/aeri.20210236).
 
-If pre-trends are present, the planned responses, in order:
+### 9. September 2026 revision and review status
 
-1. Report results as descriptive associations rather than causal effects.
-2. Narrow the event window to the periods over which pre-trends are flat.
-3. Add sector-specific linear trends and report both specifications side by side.
+The narrowed question separates access to capabilities from selective privileges. Proposed new coding fields require a versioned pilot and independent review. Existing outcome patterns have already been inspected: neither these revisions nor the cross-country diagnostics should be described as preregistered. Outcome-masked review can be used for new material where feasible, with actual exposure to outcomes recorded honestly.
 
-None of these is treated as a way to recover a causal claim. They are ways to report honestly what the data does and does not support.
+The earlier numerical reliability and weighting thresholds are exploratory workflow rules, not validated guarantees of construct validity. Independent-coder and independent methodological review remain outstanding. Synthetic demonstrations, saved patent checks, and real cross-country regressions must be reported separately.

@@ -76,3 +76,7 @@ Each coded passage should include:
 ## Ambiguous cases
 
 Ambiguous or low-confidence cases should be routed to human review. Scores should not be finalized only from machine-generated outputs.
+
+## Interpretation note — 20 September 2026
+
+This is the existing rubric version. Scores and coded batches are preserved. Allocation=2 can denote selective privilege, so a higher aggregate support score is not necessarily greater productive capacity. The [narrowed question](current_research_question.md) proposes separate beneficiary and access fields; they are not yet coded or validated. Do not infer policy quality from later outcomes.
