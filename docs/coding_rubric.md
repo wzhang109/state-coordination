@@ -4,7 +4,8 @@ The State Support Index is intended to measure **pre-transition organizational s
 
 ## Unit of coding
 
-- Sector-year-dimension cell
+- The stored coding row links one source passage to one dimension; a passage can support several rows.
+- Sector-year-dimension cells are aggregation targets, not independent observations of policy implementation.
 - Supporting evidence: archival passage, law, industrial plan, policy directive, R&D mandate, or sectoral development document
 
 ## Dimensions
@@ -50,7 +51,7 @@ State control over entry can be **protective** (restricting entry to preserve
 selected incumbents, as in the 1994 automotive policy's suspension of new
 passenger-vehicle approvals) or **compressive** (restricting capacity to force
 contraction, as in the 1998 textile spindle-reduction program). Both score 2 on
-allocation under the original rubric, but they predict opposite outcomes.
+allocation under the original rubric. Their intended directions differ, but the signs and distribution of actual effects are empirical questions; they need not be opposite.
 
 `direction` is recorded separately rather than folded into the score, so the index
 can be computed with or without the distinction and the two can be compared.
@@ -80,3 +81,8 @@ Ambiguous or low-confidence cases should be routed to human review. Scores shoul
 ## Interpretation note — 20 September 2026
 
 This is the existing rubric version. Scores and coded batches are preserved. Allocation=2 can denote selective privilege, so a higher aggregate support score is not necessarily greater productive capacity. The [narrowed question](current_research_question.md) proposes separate beneficiary and access fields; they are not yet coded or validated. Do not infer policy quality from later outcomes.
+
+
+## Evidence note — follow-up review, 20 September 2026
+
+A network-breadth score does not establish open eligibility or actual use. For example, SRC_AUTO_1994_006 proposes research/testing institutions; its existing note interprets these as shared, but the excerpt does not document access by new firms. Similarly, a formal approval restriction can identify a rule without estimating incumbent gains. Original scores and notes are retained for traceability; their implementation and effect interpretations remain review questions. The [understanding guide](study_guide.zh-CN.md) uses these records to practice the distinction.
