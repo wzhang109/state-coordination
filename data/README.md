@@ -29,12 +29,15 @@ also carry `direction` (`protective` / `compressive` / `neutral`) — see
 
 ### Coverage
 
-| Sector | Year | Document | Passages | Relative to accession |
+| Sector | Year | Document | Coding rows | Relative to accession |
 |---|---|---|---|---|
-| Automobiles | 1994 | 汽车工业产业政策 | 13 | Pre |
+| Automobiles | 1994 | 汽车工业产业政策 | 14 | Pre |
 | Automobiles | 1996 | 九五纲要, automotive section | 3 | Pre |
 | Automobiles | 2004 | 汽车产业发展政策, State Council/NDRC Order No. 8 | 9 | Post |
 | Textiles | 1998 | 国发〔1998〕2号 | 8 | Pre |
+| Textiles | 1996 | 九五纲要, textile section | 1 | Pre; same textile file |
+
+The four files contain 35 coding rows. Rows are passage-dimension records, not independent policies or implementation observations. The distinct source_id counts by file are 12, 2, 9 and 8 respectively; repeated source IDs can represent different dimensions of the same evidence. This inventory corrects the earlier 1994 count and omitted 1996 textile row without changing original data.
 
 The pre-accession batches (1994, 1996, 1998) are the inputs to the support index. The 2004
 batch is not — it documents institutional continuity across the transition (see repository
@@ -47,7 +50,7 @@ README).
 | `real_coded_passages_automobiles_1994.csv` | Rubric scores, 1994 automotive policy |
 | `real_coded_passages_automobiles_1996.csv` | Rubric scores, Ninth Five-Year Plan automotive section |
 | `real_coded_passages_automobiles_2004.csv` | Rubric scores, 2004 automotive policy |
-| `real_coded_passages_textiles.csv` | Rubric scores, 1998 textile restructuring notice |
+| `real_coded_passages_textiles.csv` | Rubric scores, 1998 notice plus 1996 textile plan passage |
 | `real_source_log_automobiles.csv` | Source metadata, 2004 batch |
 | `real_source_log_automobiles_1994.csv` | Source metadata, 1994 batch |
 | `real_source_log_automobiles_1996.csv` | Source metadata, 1996 batch |
@@ -66,7 +69,8 @@ Provenance is uneven across batches and is recorded rather than smoothed over:
 
 ### Known gaps
 
-- Sector coverage is imbalanced: three automotive documents against one textile document. A post-accession textile document is missing and would mirror the 2004 automotive batch.
+- Sector coverage and coding attention are imbalanced. Automotive batches cover 1994, 1996 and 2004; textiles cover 1998 plus one 1996 plan row. A comparable post-accession textile batch is missing.
+- Existing accepted labels and high confidence record the earlier workflow; they do not establish independent review. Some notes infer shared access or an entrenchment mechanism more strongly than the excerpt alone permits. Revisit these interpretations before using them as evidence of implementation or effects.
 
 ---
 
