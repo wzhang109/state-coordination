@@ -1,0 +1,15 @@
+event_date,date_precision,entity,event_type,event_paraphrase,source_id,evidence_type,limit
+1986-03,month,Tongzhou ground (working historical match),project_approval,Proposal completed and project approved,S05,retrospective newspaper report,Original approval not inspected
+1987-01,month,Tianjin testing-center lineage,resource_transfer_and_preparation,Staff and inspection equipment transferred to prepare the inspection institute,S04,institution retrospective history,Original transfer document not inspected
+1988-08,month,Tianjin testing-center lineage,institutional_preparation,Preparation of national passenger-car testing center on existing institute basis,S04,institution retrospective history,Preparation is not completed new physical capacity
+1990-11,month,Tianjin testing-center lineage,certification_and_review,National metrology certification and industry institutional review,S04,institution retrospective history,Not a measure of clients served
+1991-07,month,Tongzhou ground (working historical match),construction_start,Phase I construction started,S05,retrospective newspaper report,Original construction record not inspected
+1994-08-24,day,Testing institutions under the machinery ministry rules,formal_governance,Historical rules distinguish institutional types and describe capability notices and annual reports,S02,government-hosted legal database reproduction,Original formal text not inspected; no claim of current validity
+1994-12,month,Tianjin testing-center lineage,metrology_certification,National passenger-car center metrology certification,S04,institution retrospective history,Separate from February 1995 institutional authorization
+1995-02,month,Tianjin testing-center lineage,institutional_authorization,Institutional review and authorization as national passenger-car testing center,S04,institution retrospective history,Do not interpret as initial founding or physical construction date
+1995-08,month,Tongzhou ground (working historical match),phase_acceptance,Phase I handover acceptance,S05,retrospective newspaper report,Not the final whole-project acceptance date
+1996-04,month,Tongzhou ground (working historical match),construction_start,Phase II construction started,S05,retrospective newspaper report,No Article 18 funding link established
+1997-10,month,Tongzhou ground (working historical match),phase_acceptance,Phase II handover acceptance,S05,retrospective newspaper report,Original acceptance document not inspected
+1998-11,month,Tongzhou ground (working historical match),project_completion_acceptance,Ministry-organized completion acceptance,S05,retrospective newspaper report,Does not establish manufacturer eligibility or use
+2002-03,month,Tianjin testing-center lineage,scope_specific_authorization,CNCA recognition and capacity confirmation for compulsory certification testing,S04,institution retrospective history,Different scope from the 2005 notice
+2005-01-26,day,Twelve institutions in the notice,scope_specific_authorization,GB1495-2002 stage-II qualification with listed testing venues,S03,primary administrative notice,After WTO accession; not a record of realized tests

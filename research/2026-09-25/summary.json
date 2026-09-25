@@ -1,0 +1,48 @@
+{
+  "document_date": "2005-01-26",
+  "document_id": "环办〔2005〕13号",
+  "population": "Only the institutions named in this additional-qualification notice",
+  "unit": "Institution listed for GB1495-2002 stage-II testing",
+  "institutions": 12,
+  "distinct_listed_venue_names": 4,
+  "institution_venue_links": 23,
+  "institutions_by_number_of_listed_venues": {
+    "1": 6,
+    "2": 1,
+    "3": 5
+  },
+  "venue_counts": [
+    {
+      "venue_id": "V01",
+      "venue_raw": "交通部公路交通实验场",
+      "institutions_listing_venue": 10,
+      "denominator_institutions_in_notice": 12
+    },
+    {
+      "venue_id": "V02",
+      "venue_raw": "东风汽车实验场（襄樊）",
+      "institutions_listing_venue": 6,
+      "denominator_institutions_in_notice": 12
+    },
+    {
+      "venue_id": "V03",
+      "venue_raw": "海南汽车试验研究所",
+      "institutions_listing_venue": 5,
+      "denominator_institutions_in_notice": 12
+    },
+    {
+      "venue_id": "V04",
+      "venue_raw": "长春农安汽车试验场",
+      "institutions_listing_venue": 2,
+      "denominator_institutions_in_notice": 12
+    }
+  ],
+  "not_measured": [
+    "actual testing transactions",
+    "manufacturer clients or ownership",
+    "fees and waiting times",
+    "new entrant access",
+    "physical capacity",
+    "policy effects"
+  ]
+}

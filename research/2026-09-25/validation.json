@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-25",
+  "source_html_sha256": "4d554545285bce77b1ebee18f7b3e20735b8554922e5988b2bdc453d65b45e01",
+  "checks": {
+    "all_12_source_rows_match_separate_regex_extraction": true,
+    "offline_outputs_reproduced": true,
+    "reject_missing_row": true,
+    "reject_duplicate_row_id": true,
+    "reject_unknown_venue": true,
+    "reject_wrong_scope": true,
+    "reject_wrong_date": true,
+    "timeline_rows_and_source_ids_valid": true,
+    "no_contact_fields_in_extracted_data": true
+  },
+  "timeline_rows": 14,
+  "independent_human_review": false,
+  "limits": "Checks establish transcription and arithmetic consistency, not construct validity or causal identification."
+}
