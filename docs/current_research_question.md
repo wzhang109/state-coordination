@@ -1,6 +1,6 @@
 # Current questions and evidence boundaries
 
-Updated 20 September 2026 after chronology and methodological review.
+Updated 25 September 2026 with a bounded documentary pilot; the broader questions and chronology remain unchanged.
 
 ## Organizing question
 
@@ -25,9 +25,17 @@ This mechanism existed in the Korea proposal. Moving it to trade opening changes
 - Documented access restrictions and benefits concentrated among existing recipients would support an incumbent-advantage interpretation. Concentration alone is insufficient because efficiency or scale may also contribute.
 - Both mechanisms can operate together. Incomplete evidence can leave the question unresolved.
 
+## Current empirical pilot — 25 September 2026
+
+**What evidence distinguishes state-supported automotive testing infrastructure from formal arrangements that list multiple testing institutions at the same venue? What further evidence would establish access by manufacturers?**
+
+A 2005 notice supplies 12 institution records and 23 links to four venue names. It documents a specific administrative arrangement after WTO accession. It does not measure transactions, new entrant eligibility, affordability, or policy impact. Earlier histories require separating physical construction from accreditation; retrospective accounts are not original project approvals.
+
+[Findings, sources, data and reproduction](../research/2026-09-25/README.md). This pilot follows an existing coded passage; it does not resolve the broad sequencing hypothesis or commit the project to a causal WTO design.
+
 ## Immediate task
 
-Build one complete evidence record: source passage, instrument, formal eligibility, actual availability and use, outcomes, alternative explanations, and remaining gaps. Assess whether the needed beneficiary evidence is obtainable before treating China WTO as a committed causal project.
+Extend one institution–venue record to named manufacturer use, eligibility, fees and waiting times. The new pilot reaches formal authorization, not a complete policy-to-beneficiary chain. Assess whether this evidence is obtainable before treating China WTO as a committed causal project. Missing user records remain unknown, not zero use.
 
 Keep original coding identifiable as an earlier rubric version. New access fields are proposed, not validated. Existing outcomes have already been viewed; further revisions cannot be retrospectively preregistered or blinded.
 
