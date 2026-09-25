@@ -30,6 +30,14 @@ The original ten-year DDCG estimate is positive but imprecise. Selected twenty-y
 
 Two other lessons matter for the pilot. First, a high support score may represent selective privileges, so it cannot be read as better government or greater productive capacity. Second, existing industry patent totals do not identify who benefited, and the two industries were already growing differently before 2001.
 
+## Latest evidence update — 25 September 2026
+
+A documentary pilot follows automotive testing infrastructure into a concrete administrative record. A 2005 regulator notice lists **12 testing institutions, four venue names and 23 institution–venue links** for one testing standard. Ten institutions list the same venue. This is evidence of overlap in formally listed sites, not observed use by manufacturers or a causal effect of earlier policy.
+
+[New findings and reproducible data](research/2026-09-25/README.md) · [中文：这次到底推进了什么](research/2026-09-25/findings.zh-CN.md)
+
+Historical source accounts distinguish preparation, construction and accreditation. Some groundwork predates the 1994 policy; later completion cannot alone be attributed to it. The new 2005 record is post-WTO and cannot define pre-2001 exposure. Original coding scores and cross-country estimates are unchanged.
+
 ## What the materials can support
 
 | Material | Current status | What it supports |
@@ -38,6 +46,7 @@ Two other lessons matter for the pilot. First, a high support score may represen
 | Four Chinese policy batch files | 35 coding rows; uneven source strength and incomplete independent validation | Reviewable interpretations of formal policy provisions |
 | Patent counts, 1990–2010 | Internally recomputed; original query and industry mapping still need audit | Checks on saved series, not a verified policy effect |
 | Event-study demonstration in outputs | Synthetic data | Illustration of calculations |
+| Automotive testing notice, 2005 | 12 source-traceable institution rows; descriptive venue mapping | Scope-specific formal authorization, not manufacturer access or transactions |
 | Broader access versus incumbent advantages | An early mechanism question with revised measurement requirements | Hypotheses, not established findings |
 
 There are only two sectors in the current pilot. That is insufficient for a credible causal event study or reliable sector-clustered inference. Existing review labels in coding files do not establish independent validation of every score or interpretation.
@@ -58,7 +67,7 @@ The 2004 document cannot define pre-2001 exposure. Recurrence of wording after 2
 
 ## Next evidence task
 
-Trace one policy arrangement from its source text to formal eligibility, actual use, and a measurable result. For example, a policy proposing testing facilities does not establish whether new firms could afford or obtain access. Find that evidence before expanding a support index or promising a causal estimate.
+The [September 25 pilot](research/2026-09-25/README.md) reaches the formal authorization layer. Next, trace one listed institution–venue pair to a dated manufacturer test report, and seek contemporary eligibility, fees and service records. If these are unavailable, keep the result descriptive rather than treating authorization as actual access. Find that evidence before expanding a support index or promising a causal estimate.
 
 The [China WTO design](researchstrategy_ChinaWTO.md) remains a candidate mechanism study. Continuing the institutional-sequencing question or pursuing this pilot requires an explicit choice based on substantive interest, the literature, and feasible evidence. The current regressions do not decide between those routes.
 

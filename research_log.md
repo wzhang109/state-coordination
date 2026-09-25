@@ -221,3 +221,15 @@ Full details: [September 2026 research note](research/2026-09-20/README.md).
 - Published the post-result matched-horizon and full single-country omission diagnostics. The horizon coefficient difference is imprecise; stronger significance over twenty years does not demonstrate a larger association.
 - Added a Chinese research account and a stepwise understanding guide using a real policy record, a country-level calculation, and exercises. These are learning materials, not a claim that the researcher has completed or mastered every step.
 - Kept the China pilot and cross-country analysis distinct. The next evidence task is one policy-to-beneficiary record, with actual access and alternative explanations assessed separately.
+
+## 2026-09-25 — Automotive testing: formal arrangements versus actual access
+
+- Followed the existing 1994 testing-institution provision into historical and administrative records. This was a purposive documentary search, not a representative sample or a preregistered test.
+- Extracted the official January 26, 2005 notice (环办〔2005〕13号): 12 institutions, four venue names, and 23 institution–venue links for GB1495-2002 stage-II testing. Ten listed institutions share the same venue name. Included source fields, deterministic extraction/counting code and a download fingerprint; excluded personal contact fields.
+- Separated institutional preparation, physical construction, accreditation and scope-specific qualification. Retrospective histories show pre-1994 groundwork. Original approval documents and persistent entity matches still need checking.
+- The record establishes a formal arrangement, not actual tests performed, client access, affordability, productivity effects or the causal contribution of the 1994 policy. The 2005 record cannot define pre-2001 exposure. Different ministries' documents are not assumed to form a causal chain.
+- Checked all twelve extracted institution/venue rows against the official table and reproduced the three generated outputs from both the saved HTML and the included transcription. These were AI-assisted checks, not independent double coding.
+- Preserved original policy scores, earlier estimates, archived proposals and the late-March research-origin account.
+- Next: trace one institution–venue pair to a manufacturer test record and contemporaneous access conditions. Retain descriptive scope if those records cannot be obtained. Substantial AI assistance; independent review remains outstanding.
+
+[Full update](research/2026-09-25/README.md) · [中文说明](research/2026-09-25/findings.zh-CN.md).
